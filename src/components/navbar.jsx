@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 
@@ -93,12 +94,16 @@ export default function Navbar({ items }) {
       >
         <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-6 sm:px-6 lg:px-8">
           <div className="flex items-center gap-4 md:gap-6">
-            <Link href="/" className="navbar-brand flex items-center gap-3">
-              <span className="navbar-mark flex h-14 w-14 items-center justify-center rounded-full text-3xl font-bold leading-none">
-                G
-              </span>
-              <span className="navbar-email hidden text-lg font-semibold tracking-tight sm:inline">
-                mail@gerolddesign.com
+            <Link href="/" className="navbar-brand flex items-center">
+              <span className="navbar-mark flex h-14 w-14 items-center justify-center overflow-hidden rounded-full">
+                <Image
+                  src="/icon.png"
+                  alt="Nafiz Alam logo"
+                  width={56}
+                  height={56}
+                  className="h-full w-full scale-[1.38] object-cover object-center"
+                  priority
+                />
               </span>
             </Link>
           </div>

@@ -471,6 +471,54 @@ button {
   border-top: 1px solid rgba(226, 232, 240, 0.8);
 }
 
+.footer-shell {
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.82), rgba(248, 250, 252, 0.7));
+  border: 1px solid rgba(226, 232, 240, 0.9);
+  box-shadow:
+    0 24px 60px rgba(148, 163, 184, 0.14),
+    0 0 0 1px rgba(255, 255, 255, 0.55) inset;
+}
+
+.footer-social {
+  color: var(--color-accent);
+  border: 1px solid color-mix(in srgb, var(--color-accent) 24%, rgba(203, 213, 225, 0.9));
+  background: rgba(255, 255, 255, 0.7);
+  box-shadow: 0 12px 26px rgba(148, 163, 184, 0.12);
+  padding: 0.35rem;
+}
+
+.footer-social:hover {
+  transform: translateY(-2px);
+  box-shadow:
+    0 18px 30px rgba(148, 163, 184, 0.16),
+    0 0 20px color-mix(in srgb, var(--color-accent) 18%, transparent);
+}
+
+.footer-logo {
+  color: #fff;
+  background: linear-gradient(135deg, var(--color-accent), var(--color-accent-strong));
+  box-shadow:
+    0 22px 44px color-mix(in srgb, var(--color-accent) 26%, transparent),
+    0 0 0 10px rgba(255, 255, 255, 0.52);
+}
+
+.footer-link {
+  color: #1f2937;
+  transition:
+    color 200ms ease,
+    transform 200ms ease;
+}
+
+.footer-link:hover {
+  color: var(--color-accent);
+  transform: translateY(-1px);
+}
+
+.footer-copy {
+  color: color-mix(in srgb, var(--color-accent) 72%, #334155);
+}
+
 .custom-cursor-dot {
   pointer-events: none;
   position: fixed;
@@ -516,7 +564,7 @@ button {
   padding: 2px;
   background:
     conic-gradient(
-      from -90deg,
+      from 0deg,
       var(--color-accent) 0deg,
       var(--color-accent-strong) var(--scroll-progress),
       rgba(148, 163, 184, 0.18) var(--scroll-progress),
@@ -705,6 +753,7 @@ button {
 :root[data-theme="dark"] .hero-primary-button {
   background: #120a1f;
   color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.08);
   box-shadow: 0 16px 30px rgba(15, 23, 42, 0.3);
 }
 
@@ -773,7 +822,7 @@ button {
 :root[data-theme="dark"] .scroll-top-shell {
   background:
     conic-gradient(
-      from -90deg,
+      from 0deg,
       var(--color-accent) 0deg,
       var(--color-accent-strong) var(--scroll-progress),
       rgba(255, 255, 255, 0.12) var(--scroll-progress),
@@ -899,6 +948,45 @@ button {
 
 :root[data-theme="dark"] .contact-form-footer {
   border-top-color: rgba(255, 255, 255, 0.08);
+}
+
+:root[data-theme="dark"] .footer-shell {
+  background: linear-gradient(180deg, rgba(16, 12, 28, 0.94), rgba(20, 10, 34, 0.92));
+  border-color: rgba(255, 255, 255, 0.08);
+  box-shadow:
+    0 28px 70px rgba(0, 0, 0, 0.26),
+    0 0 0 1px rgba(255, 255, 255, 0.03) inset;
+}
+
+:root[data-theme="dark"] .footer-social {
+  color: #a855f7;
+  border-color: rgba(168, 85, 247, 0.42);
+  background: rgba(255, 255, 255, 0.03);
+  box-shadow: none;
+}
+
+:root[data-theme="dark"] .footer-social:hover {
+  box-shadow: 0 0 22px rgba(168, 85, 247, 0.16);
+}
+
+:root[data-theme="dark"] .footer-logo {
+  background: linear-gradient(135deg, #ffffff, #ede9fe);
+  color: #140a22;
+  box-shadow:
+    0 22px 44px rgba(0, 0, 0, 0.24),
+    0 0 0 10px rgba(255, 255, 255, 0.04);
+}
+
+:root[data-theme="dark"] .footer-link {
+  color: #f8f5ff;
+}
+
+:root[data-theme="dark"] .footer-link:hover {
+  color: #c084fc;
+}
+
+:root[data-theme="dark"] .footer-copy {
+  color: #8b5cf6;
 }
 
 .navbar-shell {

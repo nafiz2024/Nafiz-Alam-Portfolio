@@ -1,5 +1,5 @@
 export const profile = {
-  name: "Your Name Here",
+  name: "Nafiz Alam",
   designation: "Frontend Developer",
   rotatingDesignations: [
     "Frontend Developer",

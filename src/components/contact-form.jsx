@@ -16,7 +16,7 @@ function SubmitButton() {
     <button
       type="submit"
       disabled={pending}
-      className="button-hover-primary inline-flex items-center justify-center rounded-full bg-[linear-gradient(90deg,#7c3aed_0%,#8b5cf6_42%,#4c1d95_100%)] px-6 py-3 text-sm font-semibold text-white shadow-[0_16px_30px_rgba(91,33,182,0.28)] disabled:cursor-not-allowed disabled:opacity-70"
+      className="button-hover-primary hero-primary-button inline-flex items-center justify-center rounded-full px-6 py-3 text-sm font-semibold disabled:cursor-not-allowed disabled:opacity-70"
     >
       {pending ? "Sending..." : "Send Message"}
     </button>
