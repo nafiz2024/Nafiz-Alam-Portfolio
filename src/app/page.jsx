@@ -119,7 +119,7 @@ function Hero() {
             <div className="orb-float-a absolute -left-6 top-8 h-32 w-32 rounded-full bg-[var(--color-accent-soft)] blur-3xl" />
             <div className="orb-float-b absolute -right-4 bottom-0 h-40 w-40 rounded-full bg-[var(--color-sky-soft)] blur-3xl" />
             <div className="hero-card relative overflow-hidden rounded-[2rem] border border-white/80 bg-[linear-gradient(160deg,rgba(255,255,255,0.88),rgba(255,247,237,0.9))] p-5 shadow-[0_30px_80px_rgba(148,163,184,0.28)] backdrop-blur">
-              <div className="rounded-[1.5rem] bg-slate-950 p-3">
+              <div className="rounded-[1.5rem] border border-white/70 bg-white/70 p-2 shadow-sm shadow-slate-200/60">
                 <Image
                   src={profile.photo}
                   alt="Placeholder portrait for your portfolio"

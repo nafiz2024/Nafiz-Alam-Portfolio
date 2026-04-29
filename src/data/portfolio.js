@@ -26,10 +26,10 @@ export const profile = {
 };
 
 export const socialLinks = [
-  { label: "GitHub", href: "https://github.com/your-username" },
-  { label: "LinkedIn", href: "https://linkedin.com/in/your-username" },
-  { label: "Twitter", href: "https://twitter.com/your-username" },
-  { label: "Facebook", href: "https://facebook.com/your-username" },
+  { label: "GitHub", href: "https://github.com/nafiz2024" },
+  { label: "LinkedIn", href: "https://www.linkedin.com/in/nafiz-alam04/" },
+  { label: "Twitter", href: "https://x.com/NafizAlamDev" },
+  { label: "Facebook", href: "https://www.facebook.com/nafiz.alam.733/" },
 ];
 
 export const skillGroups = [

@@ -52,6 +52,17 @@ function SocialIcon({ label }) {
     );
   }
 
+  if (normalized === "twitter" || normalized === "x") {
+    return (
+      <svg viewBox="0 0 24 24" fill="none" className="h-7 w-7">
+        <path
+          d="M6 5H9.1L12.8 10.1L17.1 5H19.3L13.8 11.5L19.7 19H16.6L12.5 13.5L7.8 19H5.6L11.5 12L6 5Z"
+          fill="currentColor"
+        />
+      </svg>
+    );
+  }
+
   return (
     <svg viewBox="0 0 24 24" fill="none" className="h-7 w-7">
       <circle cx="12" cy="12" r="7.5" stroke="currentColor" strokeWidth="1.7" />
