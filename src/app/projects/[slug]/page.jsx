@@ -45,9 +45,9 @@ export default async function ProjectDetailsPage({ params }) {
   }
 
   return (
-    <main className="min-h-screen bg-[radial-gradient(circle_at_top_left,_rgba(251,146,60,0.18),_transparent_22%),linear-gradient(180deg,#fffdf8_0%,#f8fafc_100%)] px-4 py-6 sm:px-6 lg:px-8">
+    <main className="min-h-screen bg-[radial-gradient(circle_at_top_left,_rgba(251,146,60,0.18),_transparent_22%),linear-gradient(180deg,#fffdf8_0%,#f8fafc_100%)] px-4 py-5 sm:px-6 sm:py-6 lg:px-8">
       <div className="mx-auto max-w-6xl">
-        <div className="rounded-full border border-white/80 bg-white/80 px-5 py-3 shadow-lg shadow-slate-200/70 backdrop-blur">
+        <div className="rounded-[1.75rem] border border-white/80 bg-white/80 px-4 py-4 shadow-lg shadow-slate-200/70 backdrop-blur sm:rounded-full sm:px-5 sm:py-3">
           <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
             <Link
               href="/#projects"
@@ -55,12 +55,12 @@ export default async function ProjectDetailsPage({ params }) {
             >
               {"<- Back to Projects"}
             </Link>
-            <div className="flex flex-wrap gap-3">
+            <div className="flex flex-col gap-3 min-[480px]:flex-row min-[480px]:flex-wrap">
               <a
                 href={project.liveUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="rounded-full bg-slate-950 px-4 py-2 text-sm font-semibold text-white"
+                className="inline-flex items-center justify-center rounded-full bg-slate-950 px-4 py-2 text-sm font-semibold text-white"
               >
                 Live Project
               </a>
@@ -68,7 +68,7 @@ export default async function ProjectDetailsPage({ params }) {
                 href={project.repoUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="rounded-full border border-slate-300 px-4 py-2 text-sm font-semibold text-slate-900"
+                className="inline-flex items-center justify-center rounded-full border border-slate-300 px-4 py-2 text-sm font-semibold text-slate-900"
               >
                 GitHub Client
               </a>
@@ -82,10 +82,10 @@ export default async function ProjectDetailsPage({ params }) {
               <p className="font-mono text-sm uppercase tracking-[0.3em] text-[var(--color-accent)]">
                 {project.category}
               </p>
-              <h1 className="text-4xl font-semibold tracking-tight text-slate-950 sm:text-5xl">
+              <h1 className="text-3xl font-semibold tracking-tight text-slate-950 sm:text-4xl lg:text-5xl">
                 {project.name}
               </h1>
-              <p className="max-w-3xl text-lg leading-8 text-slate-600">
+              <p className="max-w-3xl text-base leading-8 text-slate-600 sm:text-lg">
                 {project.description}
               </p>
             </div>

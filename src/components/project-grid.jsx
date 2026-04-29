@@ -88,11 +88,11 @@ export default function ProjectGrid({ projects }) {
         })}
       </div>
 
-      <div className="grid gap-6 lg:grid-cols-3">
-        {visibleProjects.map((project) => (
-          <ProjectCard key={project.slug} project={project} />
-        ))}
-      </div>
+        <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+          {visibleProjects.map((project) => (
+            <ProjectCard key={project.slug} project={project} />
+          ))}
+        </div>
     </div>
   );
 }

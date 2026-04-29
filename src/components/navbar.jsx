@@ -92,16 +92,16 @@ export default function Navbar({ items }) {
           scrolled ? "is-scrolled" : ""
         }`}
       >
-        <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-6 sm:px-6 lg:px-8">
+        <div className="mx-auto flex max-w-7xl items-center justify-between gap-3 px-4 py-4 sm:px-6 sm:py-5 lg:px-8 lg:py-6">
           <div className="flex items-center gap-4 md:gap-6">
             <Link href="/" className="navbar-brand flex items-center">
-              <span className="navbar-mark flex h-14 w-14 items-center justify-center">
+              <span className="navbar-mark flex h-12 w-12 items-center justify-center sm:h-14 sm:w-14">
                 <Image
                   src="/favicon-logo.png"
                   alt="Nafiz Alam logo"
                   width={56}
                   height={56}
-                  className="h-[3.1rem] w-[3.1rem] object-contain"
+                  className="h-[2.7rem] w-[2.7rem] object-contain sm:h-[3.1rem] sm:w-[3.1rem]"
                   priority
                 />
               </span>
@@ -126,7 +126,7 @@ export default function Navbar({ items }) {
           <div className="flex items-center gap-3">
             <a
               href="#contact"
-              className="button-hover-primary hero-primary-button navbar-cta hidden rounded-full px-8 py-4 text-base font-semibold md:inline-flex"
+              className="button-hover-primary hero-primary-button navbar-cta hidden rounded-full px-6 py-3 text-sm font-semibold md:inline-flex lg:px-8 lg:py-4 lg:text-base"
             >
               Hire Me!
             </a>
@@ -134,7 +134,7 @@ export default function Navbar({ items }) {
             <button
               type="button"
               onClick={() => setOpen((current) => !current)}
-              className="navbar-mobile-button inline-flex h-12 w-12 items-center justify-center rounded-full lg:hidden"
+              className="navbar-mobile-button inline-flex h-11 w-11 items-center justify-center rounded-full sm:h-12 sm:w-12 lg:hidden"
               aria-expanded={open}
               aria-label="Toggle navigation menu"
             >
@@ -149,7 +149,7 @@ export default function Navbar({ items }) {
 
         {open ? (
           <div className="mx-auto max-w-7xl px-4 pb-4 sm:px-6 lg:px-8">
-            <nav className="navbar-mobile-panel grid gap-2 rounded-[2rem] p-4 lg:hidden">
+            <nav className="navbar-mobile-panel grid gap-2 rounded-[1.6rem] p-3 sm:rounded-[2rem] sm:p-4 lg:hidden">
               {items.map((item, index) => (
                 <a
                   key={`${item.label}-${item.href}-${index}`}

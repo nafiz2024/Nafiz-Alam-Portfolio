@@ -35,7 +35,7 @@ function AnimatedNumber({ value, suffix }) {
 
 export default function PortfolioStats({ stats }) {
   return (
-    <div className="grid gap-4 sm:grid-cols-3">
+    <div className="grid gap-4 min-[480px]:grid-cols-2 sm:grid-cols-3">
       {stats.map((stat) => (
         <div
           key={stat.label}

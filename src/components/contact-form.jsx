@@ -85,10 +85,10 @@ export default function ContactForm() {
         />
       </label>
 
-      <div className="contact-form-footer flex justify-end pt-3">
+      <div className="contact-form-footer flex flex-col gap-3 pt-3 sm:flex-row sm:items-center sm:justify-end">
         {state.message ? (
           <p
-            className={`mr-auto text-sm ${
+            className={`text-sm sm:mr-auto ${
               isError ? "text-rose-300" : "text-emerald-300"
             }`}
             aria-live="polite"
@@ -96,7 +96,9 @@ export default function ContactForm() {
             {state.message}
           </p>
         ) : null}
-        <SubmitButton />
+        <div className="sm:ml-auto">
+          <SubmitButton />
+        </div>
       </div>
     </form>
   );

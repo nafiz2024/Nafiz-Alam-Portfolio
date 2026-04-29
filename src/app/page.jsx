@@ -44,11 +44,11 @@ function SectionHeading({ eyebrow, title, description }) {
 
 function Hero() {
   return (
-    <section className="relative overflow-hidden px-4 pt-28 sm:px-6 sm:pt-30 lg:px-8 lg:pt-32">
+    <section className="relative overflow-hidden px-4 pt-24 sm:px-6 sm:pt-28 lg:px-8 lg:pt-32">
       <div className="mx-auto max-w-7xl">
-        <div className="grid gap-14 pb-20 pt-8 lg:grid-cols-[1.1fr_0.9fr] lg:items-center lg:pb-28 lg:pt-18">
+        <div className="grid gap-10 pb-16 pt-6 md:gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:items-center lg:pb-28 lg:pt-18">
           <div className="space-y-8">
-            <div className="hero-chip inline-flex items-center gap-3 rounded-full border border-white/70 bg-white/75 px-4 py-2 text-sm text-slate-700 shadow-sm shadow-orange-100/80 backdrop-blur">
+            <div className="hero-chip inline-flex max-w-full items-center gap-3 rounded-full border border-white/70 bg-white/75 px-4 py-2 text-xs text-slate-700 shadow-sm shadow-orange-100/80 backdrop-blur sm:text-sm">
               <span className="h-2.5 w-2.5 rounded-full bg-[var(--color-accent)]" />
               Placeholder content ready for your real story
             </div>
@@ -60,21 +60,21 @@ function Hero() {
                   fallback={profile.designation}
                 />
               </p>
-              <h1 className="hero-title max-w-none text-4xl font-semibold leading-[0.98] tracking-tight text-slate-950 sm:text-5xl lg:text-6xl">
+              <h1 className="hero-title max-w-none text-[2.65rem] font-semibold leading-[0.98] tracking-tight text-slate-950 sm:text-5xl lg:text-6xl">
                 {profile.headlineLines.map((line) => (
-                  <span key={line} className="block whitespace-nowrap">
+                  <span key={line} className="block sm:whitespace-nowrap">
                     {line}
                   </span>
                 ))}
               </h1>
-              <p className="hero-copy max-w-2xl text-lg leading-8 text-slate-600 sm:text-xl">
+              <p className="hero-copy max-w-2xl text-base leading-8 text-slate-600 sm:text-lg lg:text-xl">
                 {profile.intro}
               </p>
             </div>
 
             <div className="hero-actions flex flex-col gap-4 sm:flex-row">
               <a
-                className="button-hover-primary hero-primary-button inline-flex items-center justify-center rounded-full px-6 py-3 text-sm font-semibold"
+                className="button-hover-primary hero-primary-button inline-flex w-full items-center justify-center rounded-full px-6 py-3 text-sm font-semibold sm:w-auto"
                 href={profile.resumeUrl}
                 target={profile.resumeUrl.startsWith("http") ? "_blank" : undefined}
                 rel={
@@ -86,7 +86,7 @@ function Hero() {
                 View Resume
               </a>
               <a
-                className="button-hover-secondary inline-flex items-center justify-center rounded-full border border-slate-300 bg-white/85 px-6 py-3 text-sm font-semibold text-slate-900"
+                className="button-hover-secondary inline-flex w-full items-center justify-center rounded-full border border-slate-300 bg-white/85 px-6 py-3 text-sm font-semibold text-slate-900 sm:w-auto"
                 href="#contact"
               >
                 Let&apos;s Connect
@@ -115,10 +115,10 @@ function Hero() {
             </div>
           </div>
 
-          <div className="hero-visual relative mx-auto w-full max-w-md">
+          <div className="hero-visual relative mx-auto w-full max-w-sm sm:max-w-md">
             <div className="orb-float-a absolute -left-6 top-8 h-32 w-32 rounded-full bg-[var(--color-accent-soft)] blur-3xl" />
             <div className="orb-float-b absolute -right-4 bottom-0 h-40 w-40 rounded-full bg-[var(--color-sky-soft)] blur-3xl" />
-            <div className="hero-card relative overflow-hidden rounded-[2rem] border border-white/80 bg-[linear-gradient(160deg,rgba(255,255,255,0.88),rgba(255,247,237,0.9))] p-5 shadow-[0_30px_80px_rgba(148,163,184,0.28)] backdrop-blur">
+            <div className="hero-card relative overflow-hidden rounded-[2rem] border border-white/80 bg-[linear-gradient(160deg,rgba(255,255,255,0.88),rgba(255,247,237,0.9))] p-4 shadow-[0_30px_80px_rgba(148,163,184,0.28)] backdrop-blur sm:p-5">
               <div className="rounded-[1.5rem] border border-white/70 bg-white/70 p-2 shadow-sm shadow-slate-200/60">
                 <Image
                   src={profile.photo}
@@ -365,7 +365,7 @@ function ContactSection() {
         <div className="contact-shell relative overflow-hidden rounded-[2.75rem] border border-slate-200 shadow-[0_30px_100px_rgba(15,23,42,0.14)]">
           <div className="contact-orb contact-orb-one pointer-events-none absolute -left-10 top-10 h-48 w-48 rounded-full" />
           <div className="contact-orb contact-orb-two pointer-events-none absolute bottom-0 right-0 h-56 w-56 rounded-full" />
-          <div className="relative grid gap-8 px-6 py-10 sm:px-8 lg:grid-cols-[0.82fr_1.18fr] lg:px-12 lg:py-14">
+          <div className="relative grid gap-8 px-5 py-8 sm:px-8 sm:py-10 lg:grid-cols-[0.82fr_1.18fr] lg:px-12 lg:py-14">
             <div className="contact-story space-y-6">
               <div className="space-y-2">
                 <p className="contact-eyebrow font-mono text-sm uppercase tracking-[0.3em]">
@@ -452,7 +452,7 @@ function ContactSection() {
               </div>
             </div>
 
-            <div className="contact-form-shell rounded-[2.2rem] border p-5 sm:p-6">
+            <div className="contact-form-shell rounded-[2.2rem] border p-4 sm:p-6">
               <div className="mb-5">
                 <p className="contact-label font-mono text-xs uppercase tracking-[0.3em]">
                   Send A Message

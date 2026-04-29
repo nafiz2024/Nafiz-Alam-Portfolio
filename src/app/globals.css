@@ -1079,9 +1079,51 @@ button {
     transform: translateX(0);
   }
 
+  .theme-toggle {
+    min-width: 7.4rem;
+    padding: 0.32rem 0.72rem 0.32rem 0.45rem;
+  }
+
+  .theme-toggle-label {
+    min-width: 2.8rem;
+    font-size: 0.92rem;
+  }
+
+  .theme-toggle-badge {
+    height: 1.8rem;
+    width: 1.8rem;
+  }
+
   .scroll-top-shell {
     right: 1rem;
     bottom: 5.25rem;
+    height: 3.15rem;
+    width: 3.15rem;
+  }
+
+  .hero-social a {
+    flex: 1 1 calc(50% - 0.75rem);
+    justify-content: center;
+  }
+
+  .contact-card {
+    min-height: 6.25rem;
+  }
+}
+
+@media (max-width: 479px) {
+  .hero-social a {
+    flex-basis: 100%;
+  }
+
+  .footer-social {
+    height: 2.95rem !important;
+    width: 2.95rem !important;
+  }
+
+  .footer-social svg {
+    height: 1.35rem;
+    width: 1.35rem;
   }
 }
 

@@ -81,8 +81,8 @@ export default function SiteFooter() {
 
   return (
     <footer className="px-4 pb-10 pt-14 sm:px-6 lg:px-8">
-      <div className="footer-shell mx-auto max-w-7xl rounded-[2.5rem] px-6 py-10 sm:px-10">
-        <div className="flex justify-center gap-4">
+      <div className="footer-shell mx-auto max-w-7xl rounded-[2rem] px-5 py-8 sm:rounded-[2.5rem] sm:px-10 sm:py-10">
+        <div className="flex flex-wrap justify-center gap-3 sm:gap-4">
           {socialLinks.map((link) => (
             <a
               key={link.label}
@@ -97,31 +97,31 @@ export default function SiteFooter() {
           ))}
         </div>
 
-        <div className="mt-10 flex justify-center">
-          <div className="footer-logo flex h-28 w-28 items-center justify-center">
+        <div className="mt-8 flex justify-center sm:mt-10">
+          <div className="footer-logo flex h-24 w-24 items-center justify-center sm:h-28 sm:w-28">
             <Image
               src="/favicon-logo.png"
               alt={`${profile.name || "Nafiz Alam"} logo`}
               width={112}
               height={112}
-              className="h-[5.75rem] w-[5.75rem] object-contain"
+              className="h-[4.75rem] w-[4.75rem] object-contain sm:h-[5.75rem] sm:w-[5.75rem]"
             />
           </div>
         </div>
 
-        <nav className="mt-10 flex flex-wrap items-center justify-center gap-x-8 gap-y-4">
+        <nav className="mt-8 flex flex-wrap items-center justify-center gap-x-5 gap-y-3 sm:mt-10 sm:gap-x-8 sm:gap-y-4">
           {footerLinks.map((item) => (
             <a
               key={item.href}
               href={item.href}
-              className="footer-link text-xl font-semibold"
+              className="footer-link text-base font-semibold sm:text-xl"
             >
               {item.label}
             </a>
           ))}
         </nav>
 
-        <p className="footer-copy mt-10 text-center text-base">
+        <p className="footer-copy mt-8 text-center text-sm sm:mt-10 sm:text-base">
           &copy; {year} All rights reserved by {profile.name || "Nafiz Alam"}
         </p>
       </div>
