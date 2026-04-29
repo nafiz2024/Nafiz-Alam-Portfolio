@@ -496,11 +496,8 @@ button {
 }
 
 .footer-logo {
-  color: #fff;
-  background: linear-gradient(135deg, var(--color-accent), var(--color-accent-strong));
-  box-shadow:
-    0 22px 44px color-mix(in srgb, var(--color-accent) 26%, transparent),
-    0 0 0 10px rgba(255, 255, 255, 0.52);
+  background: transparent;
+  box-shadow: none;
 }
 
 .footer-link {
@@ -970,11 +967,8 @@ button {
 }
 
 :root[data-theme="dark"] .footer-logo {
-  background: linear-gradient(135deg, #ffffff, #ede9fe);
-  color: #140a22;
-  box-shadow:
-    0 22px 44px rgba(0, 0, 0, 0.24),
-    0 0 0 10px rgba(255, 255, 255, 0.04);
+  background: transparent;
+  box-shadow: none;
 }
 
 :root[data-theme="dark"] .footer-link {
@@ -1010,9 +1004,9 @@ button {
 
 .navbar-mark {
   color: var(--navbar-text-strong);
-  border: 1px solid var(--navbar-mark-border);
-  background: var(--navbar-mark-bg);
-  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.05) inset;
+  border: 0;
+  background: transparent;
+  box-shadow: none;
 }
 
 .navbar-email {

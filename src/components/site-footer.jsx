@@ -87,13 +87,13 @@ export default function SiteFooter() {
         </div>
 
         <div className="mt-10 flex justify-center">
-          <div className="footer-logo flex h-28 w-28 items-center justify-center overflow-hidden rounded-full">
+          <div className="footer-logo flex h-28 w-28 items-center justify-center">
             <Image
-              src="/icon.png"
+              src="/favicon-logo.png"
               alt={`${profile.name || "Nafiz Alam"} logo`}
               width={112}
               height={112}
-              className="h-full w-full scale-[1.38] object-cover object-center"
+              className="h-[5.75rem] w-[5.75rem] object-contain"
             />
           </div>
         </div>

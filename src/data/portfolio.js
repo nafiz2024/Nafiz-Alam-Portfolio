@@ -1,3 +1,5 @@
+import nafizPortfolioImage from "@/assests/nafiz_portfolio.png";
+
 export const profile = {
   name: "Nafiz Alam",
   designation: "Frontend Developer",
@@ -14,7 +16,7 @@ export const profile = {
   ],
   intro:
     "This portfolio is set up with polished placeholders so you can launch the structure now and replace the story, photo, resume, and project details when they are ready.",
-  photo: "/nafiz-portfolio.png",
+  photo: nafizPortfolioImage,
   resumeUrl: "#",
   about: [
     "I started learning programming by following my curiosity around how websites feel fast, expressive, and easy to use. That curiosity turned into a habit of building small ideas, breaking them, and rebuilding them with more care each time.",
