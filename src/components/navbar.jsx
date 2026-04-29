@@ -126,7 +126,7 @@ export default function Navbar({ items }) {
           <div className="flex items-center gap-3">
             <a
               href="#contact"
-              className="button-hover-primary hero-primary-button navbar-cta hidden rounded-full px-6 py-3 text-sm font-semibold md:inline-flex lg:px-8 lg:py-4 lg:text-base"
+              className="button-hover-soft theme-outline-button navbar-cta hidden rounded-full px-6 py-3 text-sm font-semibold md:inline-flex lg:px-8 lg:py-4 lg:text-base"
             >
               Hire Me!
             </a>
@@ -170,7 +170,7 @@ export default function Navbar({ items }) {
               <a
                 href="#contact"
                 onClick={() => setOpen(false)}
-                className="button-hover-primary hero-primary-button mt-2 inline-flex items-center justify-center rounded-full px-5 py-3 text-base font-semibold"
+                className="button-hover-soft theme-outline-button mt-2 inline-flex items-center justify-center rounded-full px-5 py-3 text-base font-semibold"
               >
                 Hire Me!
               </a>

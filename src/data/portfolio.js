@@ -165,10 +165,10 @@ export const projects = [
 
 export const contact = {
   email: "nafizalam.dev@gmail.com",
-  phone: "+880 1XXX-XXXXXX",
-  phoneLink: "+8801XXXXXXXXX",
-  whatsapp: "+880 1XXX-XXXXXX",
-  whatsappUrl: "https://wa.me/8801XXXXXXXXX",
+  phone: "+8801876566181",
+  phoneLink: "+8801876566181",
+  whatsapp: "+8801876566181",
+  whatsappUrl: "https://wa.me/8801876566181",
 };
 
 export const portfolioStats = [

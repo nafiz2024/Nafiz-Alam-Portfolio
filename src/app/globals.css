@@ -158,6 +158,18 @@ button {
   box-shadow: 0 16px 30px rgba(234, 88, 12, 0.22);
 }
 
+.theme-outline-button {
+  border: 1px solid color-mix(in srgb, var(--color-accent) 24%, rgba(203, 213, 225, 0.9));
+  background: rgba(255, 255, 255, 0.72);
+  color: var(--color-accent);
+  box-shadow: 0 12px 26px rgba(148, 163, 184, 0.12);
+}
+
+.theme-outline-button:hover {
+  border-color: color-mix(in srgb, var(--color-accent) 40%, rgba(203, 213, 225, 0.9));
+  background: rgba(255, 255, 255, 0.88);
+}
+
 .button-hover-secondary:hover {
   border-color: color-mix(in srgb, var(--color-accent) 44%, rgba(15, 23, 42, 0.18));
   box-shadow: 0 16px 30px rgba(15, 23, 42, 0.12);
@@ -515,6 +527,11 @@ button {
   color: color-mix(in srgb, var(--color-accent) 72%, #334155);
 }
 
+.find-me-icon {
+  color: var(--color-accent) !important;
+  border-color: color-mix(in srgb, var(--color-accent) 24%, rgba(203, 213, 225, 0.9)) !important;
+}
+
 .custom-cursor-dot {
   pointer-events: none;
   position: fixed;
@@ -753,6 +770,19 @@ button {
   box-shadow: 0 16px 30px rgba(15, 23, 42, 0.3);
 }
 
+:root[data-theme="dark"] .theme-outline-button {
+  background: rgba(255, 255, 255, 0.03);
+  color: #f8f5ff;
+  border-color: rgba(168, 85, 247, 0.42);
+  box-shadow: none;
+}
+
+:root[data-theme="dark"] .theme-outline-button:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(168, 85, 247, 0.58);
+  box-shadow: 0 0 22px rgba(168, 85, 247, 0.16);
+}
+
 :root[data-theme="dark"] .hero-designation-chip {
   border-color: rgba(192, 132, 252, 0.18);
   background: linear-gradient(135deg, rgba(20, 12, 34, 0.88), rgba(33, 18, 48, 0.72));
@@ -980,6 +1010,11 @@ button {
 
 :root[data-theme="dark"] .footer-copy {
   color: #8b5cf6;
+}
+
+:root[data-theme="dark"] .find-me-icon {
+  color: #a855f7 !important;
+  border-color: rgba(168, 85, 247, 0.42) !important;
 }
 
 .navbar-shell {
