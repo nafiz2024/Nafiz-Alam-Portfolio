@@ -38,13 +38,35 @@ function ProjectCard({ project }) {
           ))}
         </div>
 
-        <Link
-          href={`/projects/${project.slug}`}
-          className="button-hover-secondary inline-flex items-center gap-2 rounded-full border border-slate-300 px-4 py-2 text-sm font-semibold text-slate-900"
-        >
-          View Details
-          <span aria-hidden="true">{"->"}</span>
-        </Link>
+        <div className="flex flex-wrap gap-3">
+          <Link
+            href={`/projects/${project.slug}`}
+            className="button-hover-secondary inline-flex items-center gap-2 rounded-full border border-slate-300 px-4 py-2 text-sm font-semibold text-slate-900"
+          >
+            View Details
+            <span aria-hidden="true">{"->"}</span>
+          </Link>
+
+          <a
+            href={project.liveUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="button-hover-soft inline-flex items-center gap-2 rounded-full border border-slate-300 bg-white/80 px-4 py-2 text-sm font-semibold text-slate-900"
+          >
+            Live
+            <span aria-hidden="true">{"->"}</span>
+          </a>
+
+          <a
+            href={project.repoUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="button-hover-soft inline-flex items-center gap-2 rounded-full border border-slate-300 bg-white/80 px-4 py-2 text-sm font-semibold text-slate-900"
+          >
+            GitHub
+            <span aria-hidden="true">{"->"}</span>
+          </a>
+        </div>
       </div>
     </article>
   );

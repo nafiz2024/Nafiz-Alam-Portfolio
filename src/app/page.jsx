@@ -13,13 +13,13 @@ import {
   portfolioStats,
   profile,
   projects,
-  skillGroups,
+  skillsStackGroups,
   socialLinks,
+  techStackShowcase,
 } from "@/data/portfolio";
 
 const navItems = [
   { label: "About Me", href: "#about" },
-  { label: "Skills", href: "#skills" },
   { label: "Resume", href: "#education" },
   { label: "Testimonials", href: "#experience" },
   { label: "Works", href: "#projects" },
@@ -156,6 +156,348 @@ function Hero() {
   );
 }
 
+function AboutIcon({ type }) {
+  if (type === "react") {
+    return (
+      <svg viewBox="0 0 24 24" fill="none" className="h-5 w-5">
+        <circle cx="12" cy="12" r="1.7" fill="currentColor" />
+        <ellipse cx="12" cy="12" rx="8" ry="3.2" stroke="currentColor" strokeWidth="1.6" />
+        <ellipse
+          cx="12"
+          cy="12"
+          rx="8"
+          ry="3.2"
+          stroke="currentColor"
+          strokeWidth="1.6"
+          transform="rotate(60 12 12)"
+        />
+        <ellipse
+          cx="12"
+          cy="12"
+          rx="8"
+          ry="3.2"
+          stroke="currentColor"
+          strokeWidth="1.6"
+          transform="rotate(120 12 12)"
+        />
+      </svg>
+    );
+  }
+
+  if (type === "next") {
+    return (
+      <svg viewBox="0 0 24 24" fill="none" className="h-5 w-5">
+        <circle cx="12" cy="12" r="9" stroke="currentColor" strokeWidth="1.6" />
+        <path
+          d="M8.4 15.8V8.2L15.7 15.8V8.2"
+          stroke="currentColor"
+          strokeWidth="1.6"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+      </svg>
+    );
+  }
+
+  if (type === "javascript") {
+    return (
+      <svg viewBox="0 0 24 24" fill="none" className="h-5 w-5">
+        <rect x="4.5" y="4.5" width="15" height="15" rx="2" stroke="currentColor" strokeWidth="1.6" />
+        <path d="M10.2 9.2V15.2C10.2 16.15 9.58 16.7 8.75 16.7" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
+        <path d="M13.7 15.35C14.08 16.12 14.7 16.7 15.7 16.7C16.64 16.7 17.25 16.22 17.25 15.47C17.25 14.75 16.76 14.43 15.93 14.07L15.48 13.88C14.17 13.32 13.43 12.62 13.43 11.33C13.43 10.14 14.34 9.2 15.78 9.2C16.81 9.2 17.55 9.56 18.08 10.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+      </svg>
+    );
+  }
+
+  if (type === "tailwind") {
+    return (
+      <svg viewBox="0 0 24 24" fill="none" className="h-5 w-5">
+        <path
+          d="M7 9.5C8.1 7.6 9.45 6.75 11.05 6.95C13.43 7.25 13.73 9.62 15.35 10.1C16.45 10.42 17.72 9.98 19.15 8.8C18.05 10.7 16.7 11.55 15.1 11.35C12.72 11.05 12.42 8.68 10.8 8.2C9.7 7.88 8.43 8.32 7 9.5Z"
+          stroke="currentColor"
+          strokeWidth="1.6"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+        <path
+          d="M4.85 14.25C5.95 12.35 7.3 11.5 8.9 11.7C11.28 12 11.58 14.37 13.2 14.85C14.3 15.17 15.57 14.73 17 13.55C15.9 15.45 14.55 16.3 12.95 16.1C10.57 15.8 10.27 13.43 8.65 12.95C7.55 12.63 6.28 13.07 4.85 14.25Z"
+          stroke="currentColor"
+          strokeWidth="1.6"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+      </svg>
+    );
+  }
+
+  if (type === "node") {
+    return (
+      <svg viewBox="0 0 24 24" fill="none" className="h-5 w-5">
+        <path
+          d="M12 3.8L18.6 7.6V15.25L12 19.05L5.4 15.25V7.6L12 3.8Z"
+          stroke="currentColor"
+          strokeWidth="1.6"
+          strokeLinejoin="round"
+        />
+        <path
+          d="M10 9.35V14.65M10 9.35L14 14.65V9.35"
+          stroke="currentColor"
+          strokeWidth="1.6"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+      </svg>
+    );
+  }
+
+  if (type === "mongodb") {
+    return (
+      <svg viewBox="0 0 24 24" fill="none" className="h-5 w-5">
+        <path
+          d="M12 4.2C14.53 7.08 15.8 9.72 15.8 12.1C15.8 15.28 14.09 17.52 12 19.8C9.91 17.52 8.2 15.28 8.2 12.1C8.2 9.72 9.47 7.08 12 4.2Z"
+          stroke="currentColor"
+          strokeWidth="1.6"
+          strokeLinejoin="round"
+        />
+        <path d="M12 6.1V20" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" />
+      </svg>
+    );
+  }
+
+  if (type === "express") {
+    return (
+      <svg viewBox="0 0 24 24" fill="none" className="h-5 w-5">
+        <path
+          d="M4.6 9.2H10.2"
+          stroke="currentColor"
+          strokeWidth="1.55"
+          strokeLinecap="round"
+        />
+        <path
+          d="M4.6 12H9.45"
+          stroke="currentColor"
+          strokeWidth="1.55"
+          strokeLinecap="round"
+        />
+        <path
+          d="M4.6 14.8H10.2"
+          stroke="currentColor"
+          strokeWidth="1.55"
+          strokeLinecap="round"
+        />
+        <path
+          d="M13.15 8.65L19.2 15.35"
+          stroke="currentColor"
+          strokeWidth="1.55"
+          strokeLinecap="round"
+        />
+        <path
+          d="M19.2 8.65L13.15 15.35"
+          stroke="currentColor"
+          strokeWidth="1.55"
+          strokeLinecap="round"
+        />
+      </svg>
+    );
+  }
+
+  if (type === "github") {
+    return (
+      <svg viewBox="0 0 24 24" fill="none" className="h-5 w-5">
+        <path
+          d="M12 4.6C8.24 4.6 5.2 7.64 5.2 11.4C5.2 14.4 7.14 16.95 9.83 17.85C10.18 17.91 10.31 17.72 10.31 17.55V16.38C8.38 16.79 7.98 15.58 7.98 15.58C7.67 14.8 7.23 14.59 7.23 14.59C6.62 14.18 7.28 14.19 7.28 14.19C7.95 14.24 8.3 14.88 8.3 14.88C8.9 15.91 9.87 15.61 10.28 15.44C10.34 15.01 10.51 14.72 10.7 14.56C9.17 14.39 7.56 13.81 7.56 11.19C7.56 10.44 7.82 9.82 8.27 9.35C8.2 9.18 7.98 8.48 8.34 7.54C8.34 7.54 8.91 7.37 10.27 8.25C10.81 8.1 11.39 8.03 12 8.03C12.61 8.03 13.19 8.1 13.73 8.25C15.09 7.37 15.66 7.54 15.66 7.54C16.02 8.48 15.8 9.18 15.73 9.35C16.18 9.82 16.44 10.44 16.44 11.19C16.44 13.82 14.82 14.39 13.29 14.56C13.53 14.77 13.74 15.18 13.74 15.8V17.55C13.74 17.72 13.87 17.91 14.22 17.85C16.91 16.95 18.85 14.4 18.85 11.4C18.85 7.64 15.81 4.6 12 4.6Z"
+          fill="currentColor"
+        />
+      </svg>
+    );
+  }
+
+  if (type === "mysql") {
+    return (
+      <svg viewBox="0 0 24 24" fill="none" className="h-5 w-5">
+        <rect x="6" y="4.8" width="12" height="14.4" rx="2.2" stroke="currentColor" strokeWidth="1.6" />
+        <path d="M9 8.2H15" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" />
+        <path d="M9 12H15" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" />
+        <path d="M9 15.8H13" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" />
+      </svg>
+    );
+  }
+
+  if (type === "database") {
+    return (
+      <svg viewBox="0 0 24 24" fill="none" className="h-4 w-4">
+        <ellipse
+          cx="12"
+          cy="6.5"
+          rx="6.5"
+          ry="2.75"
+          stroke="currentColor"
+          strokeWidth="1.7"
+        />
+        <path
+          d="M5.5 6.5V12C5.5 13.52 8.41 14.75 12 14.75C15.59 14.75 18.5 13.52 18.5 12V6.5"
+          stroke="currentColor"
+          strokeWidth="1.7"
+        />
+        <path
+          d="M5.5 12V17.5C5.5 19.02 8.41 20.25 12 20.25C15.59 20.25 18.5 19.02 18.5 17.5V12"
+          stroke="currentColor"
+          strokeWidth="1.7"
+        />
+      </svg>
+    );
+  }
+
+  if (type === "script") {
+    return (
+      <svg viewBox="0 0 24 24" fill="none" className="h-4 w-4">
+        <path
+          d="M8.25 9.25C8.25 8.28 9.03 7.5 10 7.5H11"
+          stroke="currentColor"
+          strokeWidth="1.8"
+          strokeLinecap="round"
+        />
+        <path
+          d="M15.75 14.75C15.75 15.72 14.97 16.5 14 16.5H13"
+          stroke="currentColor"
+          strokeWidth="1.8"
+          strokeLinecap="round"
+        />
+        <path
+          d="M11 7.5L9.8 16.5"
+          stroke="currentColor"
+          strokeWidth="1.8"
+          strokeLinecap="round"
+        />
+        <path
+          d="M14.2 7.5L13 16.5"
+          stroke="currentColor"
+          strokeWidth="1.8"
+          strokeLinecap="round"
+        />
+      </svg>
+    );
+  }
+
+  if (type === "spark") {
+    return (
+      <svg viewBox="0 0 24 24" fill="none" className="h-4 w-4">
+        <path
+          d="M12 3.75L13.94 8.06L18.25 10L13.94 11.94L12 16.25L10.06 11.94L5.75 10L10.06 8.06L12 3.75Z"
+          stroke="currentColor"
+          strokeWidth="1.7"
+          strokeLinejoin="round"
+        />
+      </svg>
+    );
+  }
+
+  return (
+    <svg viewBox="0 0 24 24" fill="none" className="h-4 w-4">
+      <path
+        d="M9 8.5L5.5 12L9 15.5"
+        stroke="currentColor"
+        strokeWidth="1.8"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M15 8.5L18.5 12L15 15.5"
+        stroke="currentColor"
+        strokeWidth="1.8"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M13.5 6L10.5 18"
+        stroke="currentColor"
+        strokeWidth="1.8"
+        strokeLinecap="round"
+      />
+    </svg>
+  );
+}
+
+function TechStackSection() {
+  return (
+    <section className="section-anchor px-4 py-20 sm:px-6 lg:px-8">
+      <RevealSection className="mx-auto max-w-7xl space-y-12" delay={100}>
+        <div className="space-y-4 text-center">
+          <h2 className="text-3xl font-semibold tracking-tight text-slate-950 sm:text-4xl">
+            Tech <span className="text-[var(--color-accent)]">Stack</span>
+          </h2>
+          <p className="mx-auto max-w-2xl text-base leading-8 text-slate-600 sm:text-lg">
+            Tools &amp; technologies I use
+          </p>
+        </div>
+
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          {techStackShowcase.map((item) => (
+            <article
+              key={item.name}
+              className="stack-card stack-card-tile flex min-h-32 items-center justify-center rounded-[1.5rem] border p-6 text-center"
+            >
+              <div className="space-y-3">
+                <span className="stack-card-icon mx-auto">
+                  <AboutIcon type={item.icon} />
+                </span>
+                <p className="stack-card-label text-sm font-semibold sm:text-base">
+                  {item.name}
+                </p>
+              </div>
+            </article>
+          ))}
+        </div>
+      </RevealSection>
+    </section>
+  );
+}
+
+function SkillsStackSection() {
+  return (
+    <section className="section-anchor px-4 py-20 sm:px-6 lg:px-8">
+      <RevealSection className="mx-auto max-w-7xl space-y-12" delay={120}>
+        <div className="space-y-4 text-center">
+          <h2 className="text-3xl font-semibold tracking-tight text-slate-950 sm:text-4xl">
+            Skills &amp; <span className="text-[var(--color-accent)]">Stack</span>
+          </h2>
+          <p className="mx-auto max-w-2xl text-base leading-8 text-slate-600 sm:text-lg">
+            Technologies I use for building web applications
+          </p>
+        </div>
+
+        <div className="grid gap-6 lg:grid-cols-2">
+          {skillsStackGroups.map((group) => (
+            <article
+              key={group.title}
+              className="stack-card rounded-[1.8rem] border p-7 sm:p-8"
+            >
+              <div className="space-y-8">
+                <p className="stack-card-heading text-center font-mono text-xs uppercase tracking-[0.28em]">
+                  {group.title}
+                </p>
+
+                <div className="grid grid-cols-2 gap-8">
+                  {group.items.map((item) => (
+                    <div key={item.name} className="space-y-3 text-center">
+                      <span className="stack-card-icon mx-auto">
+                        <AboutIcon type={item.icon} />
+                      </span>
+                      <p className="stack-card-label text-sm font-semibold sm:text-base">
+                        {item.name}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </article>
+          ))}
+        </div>
+      </RevealSection>
+    </section>
+  );
+}
+
 function AboutSection() {
   return (
     <section id="about" className="section-anchor px-4 py-20 sm:px-6 lg:px-8">
@@ -163,11 +505,109 @@ function AboutSection() {
         className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[0.9fr_1.1fr]"
         delay={80}
       >
-        <SectionHeading
-          eyebrow="About Me"
-          title="A personal intro with space for both craft and character."
-          description="This section is intentionally written with a warmer voice so your portfolio feels like a person, not just a list of technologies."
-        />
+        <div className="space-y-8">
+          <SectionHeading
+            eyebrow="About Me"
+            title="A personal intro with space for both craft and character."
+            description="This section is intentionally written with a warmer voice so your portfolio feels like a person, not just a list of technologies."
+          />
+          <div className="about-panel relative overflow-hidden rounded-[2rem] border p-5 sm:p-6">
+            <div
+              aria-hidden="true"
+              className="about-panel-orb about-panel-orb-one absolute -left-12 top-0 h-28 w-28 rounded-full"
+            />
+            <div
+              aria-hidden="true"
+              className="about-panel-orb about-panel-orb-two absolute bottom-0 right-0 h-32 w-32 rounded-full"
+            />
+
+            <div className="relative space-y-7">
+              <div className="space-y-4">
+                <div className="flex items-center gap-3">
+                  <span className="about-mini-icon">
+                    <svg viewBox="0 0 24 24" fill="none" className="h-4 w-4">
+                      <path
+                        d="M4.75 7.75H19.25"
+                        stroke="currentColor"
+                        strokeWidth="1.8"
+                        strokeLinecap="round"
+                      />
+                      <path
+                        d="M7.75 4.75H16.25V19.25H7.75V4.75Z"
+                        stroke="currentColor"
+                        strokeWidth="1.8"
+                        strokeLinejoin="round"
+                      />
+                    </svg>
+                  </span>
+                  <h3 className="text-2xl font-semibold text-slate-950">
+                    My Tech Stack
+                  </h3>
+                </div>
+
+                <div className="flex flex-wrap gap-3">
+                  {profile.aboutTechStack.map((item) => (
+                    <div
+                      key={item.name}
+                      className="about-tech-pill inline-flex items-center gap-3 rounded-2xl px-4 py-3"
+                    >
+                      <span className="about-tech-icon">
+                        <AboutIcon type={item.icon} />
+                      </span>
+                      <span className="text-sm font-medium text-slate-800 sm:text-base">
+                        {item.name}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <div className="space-y-4">
+                <div className="flex items-center gap-3">
+                  <span className="about-mini-icon">
+                    <svg viewBox="0 0 24 24" fill="none" className="h-4 w-4">
+                      <path
+                        d="M8 6.75V5.75C8 4.92 8.67 4.25 9.5 4.25H14.5C15.33 4.25 16 4.92 16 5.75V6.75"
+                        stroke="currentColor"
+                        strokeWidth="1.8"
+                        strokeLinecap="round"
+                      />
+                      <rect
+                        x="4.25"
+                        y="6.75"
+                        width="15.5"
+                        height="11.5"
+                        rx="2.5"
+                        stroke="currentColor"
+                        strokeWidth="1.8"
+                      />
+                    </svg>
+                  </span>
+                  <h3 className="text-2xl font-semibold text-slate-950">
+                    Experience
+                  </h3>
+                </div>
+
+                <article className="about-experience-card rounded-[1.75rem] border p-5 sm:p-6">
+                  <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
+                    <div className="space-y-2">
+                      <h4 className="text-xl font-semibold text-slate-950">
+                        {profile.aboutExperience.title}
+                      </h4>
+                      <p className="max-w-xl text-sm leading-7 text-slate-600 sm:text-base">
+                        {profile.aboutExperience.summary}
+                      </p>
+                    </div>
+                    <p className="font-mono text-sm uppercase tracking-[0.24em] text-[var(--color-accent)]">
+                      {profile.aboutExperience.timeframe}
+                    </p>
+                  </div>
+                </article>
+              </div>
+            </div>
+          </div>
+        </div>
+
         <div className="grid gap-6">
           {profile.about.map((paragraph) => (
             <p
@@ -176,73 +616,6 @@ function AboutSection() {
             >
               {paragraph}
             </p>
-          ))}
-        </div>
-      </RevealSection>
-    </section>
-  );
-}
-
-function SkillsSection() {
-  return (
-    <section id="skills" className="section-anchor px-4 py-20 sm:px-6 lg:px-8">
-      <RevealSection className="mx-auto max-w-7xl space-y-12" delay={100}>
-        <SectionHeading
-          eyebrow="Skills"
-          title="A graphical skills layout that stays readable."
-          description="Each category is driven by local data, so replacing placeholder skills later is a content edit instead of a redesign."
-        />
-
-        <div className="grid gap-6 lg:grid-cols-3">
-          {skillGroups.map((group, index) => (
-            <article
-              key={group.category}
-              className="skill-card relative overflow-hidden rounded-[2rem] border border-white/70 bg-white/80 p-6 shadow-lg shadow-slate-200/60"
-            >
-              <div
-                aria-hidden="true"
-                className="absolute right-0 top-0 h-24 w-24 rounded-full blur-3xl"
-                style={{
-                  background:
-                    index % 3 === 0
-                      ? "var(--color-accent-soft)"
-                      : index % 3 === 1
-                        ? "var(--color-sky-soft)"
-                        : "rgba(196,181,253,0.35)",
-                }}
-              />
-              <div className="relative space-y-6">
-                <div>
-                  <p className="font-mono text-xs uppercase tracking-[0.3em] text-slate-500">
-                    {group.category}
-                  </p>
-                  <h3 className="mt-2 text-2xl font-semibold text-slate-950">
-                    {group.title}
-                  </h3>
-                </div>
-
-                <div className="space-y-4">
-                  {group.items.map((skill) => (
-                    <div key={skill.name} className="skill-item space-y-2">
-                      <div className="skill-row flex items-center justify-between text-sm">
-                        <span className="font-medium text-slate-800">
-                          {skill.name}
-                        </span>
-                        <span className="skill-percent font-mono text-slate-500">
-                          {skill.level}%
-                        </span>
-                      </div>
-                      <div className="skill-track h-2 overflow-hidden rounded-full bg-slate-200">
-                        <div
-                          className="skill-fill h-full rounded-full bg-[linear-gradient(90deg,#f97316,#fb7185,#38bdf8)]"
-                          style={{ width: `${skill.level}%` }}
-                        />
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </article>
           ))}
         </div>
       </RevealSection>
@@ -564,7 +937,8 @@ export default function Home() {
       <Navbar items={navItems} />
       <Hero />
       <AboutSection />
-      <SkillsSection />
+      <TechStackSection />
+      <SkillsStackSection />
       <EducationSection />
       <ExperienceSection />
       <ProjectsSection />

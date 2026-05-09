@@ -1,5 +1,6 @@
 import localFont from "next/font/local";
 import CustomCursor from "@/components/custom-cursor";
+import IntroLoader from "@/components/intro-loader";
 import ScrollTopButton from "@/components/scroll-top-button";
 import ThemeToggle from "@/components/theme-toggle";
 import "./globals.css";
@@ -46,6 +47,7 @@ export default function RootLayout({ children }) {
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-background text-foreground">
+        <IntroLoader />
         <CustomCursor />
         <ThemeToggle />
         <ScrollTopButton />

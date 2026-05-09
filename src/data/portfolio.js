@@ -23,6 +23,18 @@ export const profile = {
     "The kind of work I enjoy most sits at the intersection of design and engineering: interfaces that feel smooth, thoughtful systems behind the UI, and projects where details like spacing, copy, and states matter just as much as the logic.",
     "Outside of programming, this placeholder section leaves room for the parts of you that make the portfolio human. You might talk about sports, sketching, gaming, reading, or the way you recharge after deep work and bring that energy back into your projects.",
   ],
+  aboutTechStack: [
+    { name: "React.js", icon: "code" },
+    { name: "Next.js", icon: "spark" },
+    { name: "JavaScript", icon: "script" },
+    { name: "MongoDB", icon: "database" },
+  ],
+  aboutExperience: {
+    title: "Frontend Developer",
+    timeframe: "2026 - Present",
+    summary:
+      "Building responsive web interfaces with React, Next.js, Tailwind CSS, and API-driven features while keeping the user experience clean, fast, and polished.",
+  },
 };
 
 export const socialLinks = [
@@ -61,6 +73,38 @@ export const skillGroups = [
       { name: "Figma Handoff", level: 72 },
       { name: "Responsive Design", level: 90 },
       { name: "Debugging", level: 80 },
+    ],
+  },
+];
+
+export const techStackShowcase = [
+  { name: "React", icon: "react" },
+  { name: "Next.js", icon: "next" },
+  { name: "JavaScript", icon: "javascript" },
+  { name: "Tailwind CSS", icon: "tailwind" },
+  { name: "Node.js", icon: "node" },
+  { name: "MongoDB", icon: "mongodb" },
+  { name: "Express", icon: "express" },
+  { name: "GitHub", icon: "github" },
+];
+
+export const skillsStackGroups = [
+  {
+    title: "Frontend",
+    items: [
+      { name: "React", icon: "react" },
+      { name: "Next.js", icon: "next" },
+      { name: "JavaScript", icon: "javascript" },
+      { name: "Tailwind CSS", icon: "tailwind" },
+    ],
+  },
+  {
+    title: "Backend (Learning)",
+    items: [
+      { name: "Node.js", icon: "node" },
+      { name: "Express", icon: "express" },
+      { name: "MongoDB", icon: "mongodb" },
+      { name: "MySQL", icon: "mysql" },
     ],
   },
 ];
