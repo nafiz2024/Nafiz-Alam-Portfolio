@@ -1101,6 +1101,14 @@ button {
   color: #8b5cf6;
 }
 
+:root[data-theme="dark"] .stack-card-label {
+  color: #efe7ff;
+}
+
+:root[data-theme="dark"] .stack-card-heading {
+  color: #cdb9e9;
+}
+
 :root[data-theme="dark"] .skill-row {
   color: #f4ecff;
 }
