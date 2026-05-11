@@ -527,6 +527,184 @@ button {
     0 0 0 1px rgba(255, 255, 255, 0.42) inset;
 }
 
+.atom-showcase {
+  position: relative;
+  min-height: 32rem;
+  overflow: hidden;
+  border-radius: 2rem;
+  border: 1px solid rgba(226, 232, 240, 0.9);
+  background:
+    radial-gradient(circle at 50% 45%, rgba(192, 132, 252, 0.12), transparent 24%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.3), rgba(248, 250, 252, 0.08));
+  box-shadow:
+    0 26px 70px rgba(148, 163, 184, 0.14),
+    0 0 0 1px rgba(255, 255, 255, 0.35) inset;
+}
+
+.atom-showcase-grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+  background-size: 22px 22px;
+  mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.65), transparent 100%);
+  opacity: 0.7;
+}
+
+.atom-showcase-glow {
+  position: absolute;
+  border-radius: 999px;
+  filter: blur(58px);
+  opacity: 0.7;
+}
+
+.atom-showcase-glow-one {
+  left: 6%;
+  top: 10%;
+  height: 9rem;
+  width: 9rem;
+  background: radial-gradient(circle, rgba(249, 115, 22, 0.2), transparent 70%);
+}
+
+.atom-showcase-glow-two {
+  right: 8%;
+  bottom: 8%;
+  height: 10rem;
+  width: 10rem;
+  background: radial-gradient(circle, rgba(56, 189, 248, 0.16), transparent 72%);
+}
+
+.atom-stage {
+  position: relative;
+  display: flex;
+  min-height: 32rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.atom-nucleus {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #c084fc;
+  filter: drop-shadow(0 0 18px rgba(168, 85, 247, 0.28));
+  transform: translate(-50%, -50%);
+}
+
+.atom-nucleus svg {
+  height: 6.3rem;
+  width: 6.3rem;
+}
+
+.orbiting-circles-shell {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  height: var(--orbit-diameter);
+  width: var(--orbit-diameter);
+  transform: translate(-50%, -50%);
+}
+
+.orbiting-circles-ring {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  border-radius: 999px;
+  border: 3px solid rgba(192, 132, 252, 0.34);
+  animation: orbit-spin var(--orbit-duration) linear infinite;
+  animation-direction: var(--orbit-direction);
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.03) inset;
+}
+
+.orbiting-circles-item {
+  position: absolute;
+  inset: 0;
+  transform: rotate(var(--orbit-angle));
+}
+
+.orbiting-circles-node {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  display: inline-flex;
+  height: var(--orbit-icon-size);
+  width: var(--orbit-icon-size);
+  transform: translate(-50%, -50%);
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  border: 1px solid rgba(192, 132, 252, 0.22);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.82), rgba(255, 247, 237, 0.7));
+  color: color-mix(in srgb, var(--color-accent) 74%, #7c3aed);
+  box-shadow:
+    0 14px 28px rgba(148, 163, 184, 0.14),
+    0 0 0 1px rgba(255, 255, 255, 0.42) inset;
+  animation: orbit-counter-spin var(--orbit-duration) linear infinite;
+  animation-direction: var(--orbit-counter-direction);
+}
+
+.orbiting-circles-node svg {
+  height: 55%;
+  width: 55%;
+}
+
+.atom-shell {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  border-radius: 999px;
+  transform: translate(-50%, -50%);
+}
+
+.atom-shell-ring {
+  position: absolute;
+  inset: 0;
+  border-radius: 999px;
+  border: 3px solid rgba(192, 132, 252, 0.38);
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.03) inset;
+}
+
+.atom-shell-inner {
+  height: 13rem;
+  width: 13rem;
+}
+
+.atom-shell-middle {
+  height: 20rem;
+  width: 20rem;
+}
+
+.atom-shell-outer {
+  height: 27rem;
+  width: 27rem;
+}
+
+.atom-electron-icon {
+  position: absolute;
+  display: inline-flex;
+  height: 3rem;
+  width: 3rem;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  border: 1px solid rgba(192, 132, 252, 0.22);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.8), rgba(255, 247, 237, 0.68));
+  color: color-mix(in srgb, var(--color-accent) 74%, #7c3aed);
+  box-shadow:
+    0 14px 28px rgba(148, 163, 184, 0.14),
+    0 0 0 1px rgba(255, 255, 255, 0.42) inset;
+}
+
+.atom-electron-icon svg {
+  height: 1.3rem;
+  width: 1.3rem;
+}
+
 .stack-card {
   border-color: rgba(226, 232, 240, 0.92);
   background:
@@ -1320,6 +1498,42 @@ button {
   border-color: rgba(168, 85, 247, 0.42) !important;
 }
 
+:root[data-theme="dark"] .atom-showcase {
+  border-color: rgba(192, 132, 252, 0.14);
+  background:
+    radial-gradient(circle at 50% 45%, rgba(192, 132, 252, 0.16), transparent 26%),
+    linear-gradient(180deg, rgba(23, 14, 38, 0.94), rgba(14, 10, 24, 0.9));
+  box-shadow:
+    0 28px 56px rgba(0, 0, 0, 0.28),
+    0 0 0 1px rgba(255, 255, 255, 0.03) inset;
+}
+
+:root[data-theme="dark"] .atom-showcase-grid {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+}
+
+:root[data-theme="dark"] .atom-nucleus {
+  color: #d8b4fe;
+  filter: drop-shadow(0 0 22px rgba(168, 85, 247, 0.3));
+}
+
+:root[data-theme="dark"] .orbiting-circles-ring,
+:root[data-theme="dark"] .atom-shell-ring {
+  border-color: rgba(192, 132, 252, 0.24);
+}
+
+:root[data-theme="dark"] .orbiting-circles-node,
+:root[data-theme="dark"] .atom-electron-icon {
+  border-color: rgba(192, 132, 252, 0.18);
+  background: linear-gradient(135deg, rgba(30, 18, 49, 0.9), rgba(20, 12, 34, 0.82));
+  color: #c084fc;
+  box-shadow:
+    0 16px 28px rgba(0, 0, 0, 0.22),
+    0 0 0 1px rgba(255, 255, 255, 0.03) inset;
+}
+
 .navbar-shell {
   background: var(--navbar-bg);
   border-bottom: 1px solid var(--navbar-border);
@@ -1599,6 +1813,58 @@ button {
   }
 }
 
+@keyframes atom-spin {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+@keyframes orbit-spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes orbit-counter-spin {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+
+  to {
+    transform: translate(-50%, -50%) rotate(-360deg);
+  }
+}
+
+@media (max-width: 1023px) {
+  .atom-showcase,
+  .atom-stage {
+    min-height: 28rem;
+  }
+
+  .atom-stage {
+    transform: scale(0.9);
+  }
+}
+
+@media (max-width: 640px) {
+  .atom-showcase,
+  .atom-stage {
+    min-height: 24rem;
+  }
+
+  .atom-stage {
+    transform: scale(0.66);
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
@@ -1624,10 +1890,12 @@ button {
   .orb-float-b,
   .ambient-orb-one,
   .ambient-orb-two,
-  .ambient-orb-three {
+  .ambient-orb-three,
+  .atom-shell,
+  .orbiting-circles-ring,
+  .orbiting-circles-node {
     animation: none !important;
     opacity: 1 !important;
-    transform: none !important;
     transition: none !important;
   }
 
@@ -1667,6 +1935,18 @@ button {
   .button-hover-panel::before,
   .button-hover-filter::before {
     display: none;
+  }
+
+  .atom-shell {
+    transform: translate(-50%, -50%) !important;
+  }
+
+  .orbiting-circles-shell {
+    transform: translate(-50%, -50%) !important;
+  }
+
+  .orbiting-circles-node {
+    transform: translate(-50%, -50%) !important;
   }
 
   .intro-loader-shell {

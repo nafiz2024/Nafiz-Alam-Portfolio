@@ -27,7 +27,9 @@ export const profile = {
   aboutTechStack: [
     { name: "React.js", icon: "code" },
     { name: "Next.js", icon: "spark" },
-    { name: "JavaScript", icon: "script" },
+    { name: "Tailwind CSS", icon: "tailwind" },
+    { name: "Express", icon: "express" },
+    { name: "GitHub", icon: "github" },
     { name: "MongoDB", icon: "database" },
   ],
   aboutExperience: {

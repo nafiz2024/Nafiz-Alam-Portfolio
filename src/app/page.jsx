@@ -2,6 +2,7 @@ import Image from "next/image";
 import ContactForm from "@/components/contact-form";
 import HeroDesignation from "@/components/hero-designation";
 import Navbar from "@/components/navbar";
+import { OrbitingCircles } from "@/components/orbiting-circles";
 import PortfolioStats from "@/components/portfolio-stats";
 import ProjectGrid from "@/components/project-grid";
 import RevealSection from "@/components/reveal-section";
@@ -323,6 +324,28 @@ function AboutIcon({ type }) {
     );
   }
 
+  if (type === "codex") {
+    return (
+      <svg viewBox="0 0 24 24" fill="none" className="h-5 w-5">
+        <path
+          d="M9.15 6.2H14.85L17.8 9.15V14.85L14.85 17.8H9.15L6.2 14.85V9.15L9.15 6.2Z"
+          stroke="currentColor"
+          strokeWidth="1.5"
+          strokeLinejoin="round"
+        />
+        <path
+          d="M9.55 9.45L11.25 12L9.55 14.55"
+          stroke="currentColor"
+          strokeWidth="1.5"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+        <path d="M14.45 9.45L12.75 12L14.45 14.55" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+        <path d="M11.55 15.7L12.45 8.3" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+      </svg>
+    );
+  }
+
   if (type === "database") {
     return (
       <svg viewBox="0 0 24 24" fill="none" className="h-4 w-4">
@@ -499,6 +522,25 @@ function SkillsStackSection() {
 }
 
 function AboutSection() {
+  const orbitIcons = [
+    [
+      { name: "React.js", icon: "react" },
+      { name: "Next.js", icon: "next" },
+      { name: "JavaScript", icon: "javascript" },
+    ],
+    [
+      { name: "Tailwind CSS", icon: "tailwind" },
+      { name: "Node.js", icon: "node" },
+      { name: "MongoDB", icon: "mongodb" },
+    ],
+    [
+      { name: "Express", icon: "express" },
+      { name: "GitHub", icon: "github" },
+      { name: "MySQL", icon: "mysql" },
+      { name: "Codex", icon: "codex" },
+    ],
+  ];
+
   return (
     <section id="about" className="section-anchor px-4 py-20 sm:px-6 lg:px-8">
       <RevealSection
@@ -511,99 +553,33 @@ function AboutSection() {
             title="A personal intro with space for both craft and character."
             description="This section is intentionally written with a warmer voice so your portfolio feels like a person, not just a list of technologies."
           />
-          <div className="about-panel relative overflow-hidden rounded-[2rem] border p-5 sm:p-6">
-            <div
-              aria-hidden="true"
-              className="about-panel-orb about-panel-orb-one absolute -left-12 top-0 h-28 w-28 rounded-full"
-            />
-            <div
-              aria-hidden="true"
-              className="about-panel-orb about-panel-orb-two absolute bottom-0 right-0 h-32 w-32 rounded-full"
-            />
+          <div className="atom-showcase">
+            <div className="atom-showcase-grid" aria-hidden="true" />
+            <div className="atom-showcase-glow atom-showcase-glow-one" aria-hidden="true" />
+            <div className="atom-showcase-glow atom-showcase-glow-two" aria-hidden="true" />
 
-            <div className="relative space-y-7">
-              <div className="space-y-4">
-                <div className="flex items-center gap-3">
-                  <span className="about-mini-icon">
-                    <svg viewBox="0 0 24 24" fill="none" className="h-4 w-4">
-                      <path
-                        d="M4.75 7.75H19.25"
-                        stroke="currentColor"
-                        strokeWidth="1.8"
-                        strokeLinecap="round"
-                      />
-                      <path
-                        d="M7.75 4.75H16.25V19.25H7.75V4.75Z"
-                        stroke="currentColor"
-                        strokeWidth="1.8"
-                        strokeLinejoin="round"
-                      />
-                    </svg>
-                  </span>
-                  <h3 className="text-2xl font-semibold text-slate-950">
-                    My Tech Stack
-                  </h3>
-                </div>
-
-                <div className="flex flex-wrap gap-3">
-                  {profile.aboutTechStack.map((item) => (
-                    <div
-                      key={item.name}
-                      className="about-tech-pill inline-flex items-center gap-3 rounded-2xl px-4 py-3"
-                    >
-                      <span className="about-tech-icon">
-                        <AboutIcon type={item.icon} />
-                      </span>
-                      <span className="text-sm font-medium text-slate-800 sm:text-base">
-                        {item.name}
-                      </span>
-                    </div>
-                  ))}
-                </div>
+            <div className="atom-stage">
+              <div className="atom-nucleus" aria-hidden="true">
+                <AboutIcon type="code" />
               </div>
 
-              <div className="space-y-4">
-                <div className="flex items-center gap-3">
-                  <span className="about-mini-icon">
-                    <svg viewBox="0 0 24 24" fill="none" className="h-4 w-4">
-                      <path
-                        d="M8 6.75V5.75C8 4.92 8.67 4.25 9.5 4.25H14.5C15.33 4.25 16 4.92 16 5.75V6.75"
-                        stroke="currentColor"
-                        strokeWidth="1.8"
-                        strokeLinecap="round"
-                      />
-                      <rect
-                        x="4.25"
-                        y="6.75"
-                        width="15.5"
-                        height="11.5"
-                        rx="2.5"
-                        stroke="currentColor"
-                        strokeWidth="1.8"
-                      />
-                    </svg>
-                  </span>
-                  <h3 className="text-2xl font-semibold text-slate-950">
-                    Experience
-                  </h3>
-                </div>
+              <OrbitingCircles iconSize={42} radius={92} speed={1.35}>
+                {orbitIcons[0].map((item) => (
+                  <AboutIcon key={item.name} type={item.icon} />
+                ))}
+              </OrbitingCircles>
 
-                <article className="about-experience-card rounded-[1.75rem] border p-5 sm:p-6">
-                  <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
-                    <div className="space-y-2">
-                      <h4 className="text-xl font-semibold text-slate-950">
-                        {profile.aboutExperience.title}
-                      </h4>
-                      <p className="max-w-xl text-sm leading-7 text-slate-600 sm:text-base">
-                        {profile.aboutExperience.summary}
-                      </p>
-                    </div>
-                    <p className="font-mono text-sm uppercase tracking-[0.24em] text-[var(--color-accent)]">
-                      {profile.aboutExperience.timeframe}
-                    </p>
-                  </div>
-                </article>
-              </div>
+              <OrbitingCircles iconSize={44} radius={150} reverse speed={1.7}>
+                {orbitIcons[1].map((item) => (
+                  <AboutIcon key={item.name} type={item.icon} />
+                ))}
+              </OrbitingCircles>
+
+              <OrbitingCircles iconSize={46} radius={208} speed={1.1}>
+                {orbitIcons[2].map((item) => (
+                  <AboutIcon key={item.name} type={item.icon} />
+                ))}
+              </OrbitingCircles>
             </div>
           </div>
         </div>
