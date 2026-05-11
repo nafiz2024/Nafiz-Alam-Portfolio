@@ -1396,6 +1396,10 @@ button {
   transition: transform 220ms ease;
 }
 
+:root[data-theme="light"] .navbar-link::after {
+  background: linear-gradient(90deg, #ea580c 0%, #fb7185 100%);
+}
+
 .navbar-link:hover::after,
 .navbar-link.is-active::after {
   transform: scaleX(1);

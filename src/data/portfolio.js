@@ -17,7 +17,8 @@ export const profile = {
   intro:
     "This portfolio is set up with polished placeholders so you can launch the structure now and replace the story, photo, resume, and project details when they are ready.",
   photo: nafizPortfolioImage,
-  resumeUrl: "#",
+  resumeUrl:
+    "https://drive.google.com/file/d/1iep2frg3Oh3cuaHWRNXaRb3SmIjDrbsI/view?usp=sharing",
   about: [
     "I started learning programming by following my curiosity around how websites feel fast, expressive, and easy to use. That curiosity turned into a habit of building small ideas, breaking them, and rebuilding them with more care each time.",
     "The kind of work I enjoy most sits at the intersection of design and engineering: interfaces that feel smooth, thoughtful systems behind the UI, and projects where details like spacing, copy, and states matter just as much as the logic.",
@@ -31,7 +32,7 @@ export const profile = {
   ],
   aboutExperience: {
     title: "Frontend Developer",
-    timeframe: "2026 - Present",
+    timeframe: "2024 - Present",
     summary:
       "Building responsive web interfaces with React, Next.js, Tailwind CSS, and API-driven features while keeping the user experience clean, fast, and polished.",
   },
