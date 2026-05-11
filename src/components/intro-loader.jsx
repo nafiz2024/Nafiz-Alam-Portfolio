@@ -51,7 +51,7 @@ export default function IntroLoader() {
           <span className="intro-loader-progress-fill" />
         </div>
 
-        <p className="intro-loader-tagline">MIXING LIQUID EXPERIENCES</p>
+        <p className="intro-loader-tagline">FRONTEND WEB DEVELOPER</p>
       </div>
     </div>
   );
