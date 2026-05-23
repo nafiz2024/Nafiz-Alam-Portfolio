@@ -14,16 +14,19 @@ import {
   portfolioStats,
   profile,
   projects,
+  services,
   skillsStackGroups,
   socialLinks,
   techStackShowcase,
 } from "@/data/portfolio";
 
 const navItems = [
-  { label: "About Me", href: "#about" },
-  { label: "Resume", href: "#education" },
-  { label: "Testimonials", href: "#experience" },
-  { label: "Works", href: "#projects" },
+  { label: "About", href: "#about" },
+  { label: "Skills", href: "#skills" },
+  { label: "Education", href: "#education" },
+  { label: "Experience", href: "#experience" },
+  { label: "Services", href: "#services" },
+  { label: "Projects", href: "#projects" },
   { label: "Contact", href: "#contact" },
 ];
 
@@ -45,13 +48,13 @@ function SectionHeading({ eyebrow, title, description }) {
 
 function Hero() {
   return (
-    <section className="relative overflow-hidden px-4 pt-24 sm:px-6 sm:pt-28 lg:px-8 lg:pt-32">
+    <section className="relative overflow-hidden px-4 pt-22 sm:px-6 sm:pt-28 lg:px-8 lg:pt-32">
       <div className="mx-auto max-w-7xl">
         <div className="grid gap-10 pb-16 pt-6 md:gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:items-center lg:pb-28 lg:pt-18">
           <div className="space-y-8">
-            <div className="hero-chip inline-flex max-w-full items-center gap-3 rounded-full border border-white/70 bg-white/75 px-4 py-2 text-xs text-slate-700 shadow-sm shadow-orange-100/80 backdrop-blur sm:text-sm">
+            <div className="hero-chip inline-flex max-w-full items-center gap-2 rounded-full border border-white/70 bg-white/75 px-3 py-2 text-[0.68rem] text-slate-700 shadow-sm shadow-orange-100/80 backdrop-blur min-[420px]:gap-3 min-[420px]:px-4 min-[420px]:text-xs sm:text-sm">
               <span className="h-2.5 w-2.5 rounded-full bg-[var(--color-accent)]" />
-              Placeholder content ready for your real story
+              {profile.heroBadge}
             </div>
 
             <div className="space-y-5">
@@ -61,21 +64,33 @@ function Hero() {
                   fallback={profile.designation}
                 />
               </p>
-              <h1 className="hero-title max-w-none text-[2.65rem] font-semibold leading-[0.98] tracking-tight text-slate-950 sm:text-5xl lg:text-6xl">
+              <h1 className="hero-title max-w-none text-[2.2rem] font-semibold leading-[0.98] tracking-tight text-slate-950 min-[420px]:text-[2.65rem] sm:text-5xl lg:text-6xl">
                 {profile.headlineLines.map((line) => (
                   <span key={line} className="block sm:whitespace-nowrap">
                     {line}
                   </span>
                 ))}
               </h1>
-              <p className="hero-copy max-w-2xl text-base leading-8 text-slate-600 sm:text-lg lg:text-xl">
+              <p className="hero-copy max-w-2xl text-[0.98rem] leading-7 text-slate-600 sm:text-lg sm:leading-8 lg:text-xl">
                 {profile.intro}
               </p>
             </div>
 
-            <div className="hero-actions flex flex-col gap-4 sm:flex-row">
+            <div className="hero-actions flex flex-col gap-3 sm:flex-row sm:gap-4">
               <a
                 className="button-hover-primary hero-primary-button inline-flex w-full items-center justify-center rounded-full px-6 py-3 text-sm font-semibold sm:w-auto"
+                href="#projects"
+              >
+                View Projects
+              </a>
+              <a
+                className="button-hover-secondary inline-flex w-full items-center justify-center rounded-full border border-slate-300 bg-white/85 px-6 py-3 text-sm font-semibold text-slate-900 sm:w-auto"
+                href="#contact"
+              >
+                Contact Me
+              </a>
+              <a
+                className="button-hover-soft inline-flex w-full items-center justify-center rounded-full border border-slate-300 bg-white/85 px-6 py-3 text-sm font-semibold text-slate-900 sm:w-auto"
                 href={profile.resumeUrl}
                 target={profile.resumeUrl.startsWith("http") ? "_blank" : undefined}
                 rel={
@@ -84,13 +99,7 @@ function Hero() {
                     : undefined
                 }
               >
-                View Resume
-              </a>
-              <a
-                className="button-hover-secondary inline-flex w-full items-center justify-center rounded-full border border-slate-300 bg-white/85 px-6 py-3 text-sm font-semibold text-slate-900 sm:w-auto"
-                href="#contact"
-              >
-                Let&apos;s Connect
+                Download Resume
               </a>
             </div>
 
@@ -123,7 +132,7 @@ function Hero() {
               <div className="rounded-[1.5rem] border border-white/70 bg-white/70 p-2 shadow-sm shadow-slate-200/60">
                 <Image
                   src={profile.photo}
-                  alt="Placeholder portrait for your portfolio"
+                  alt={`${profile.name} portrait`}
                   width={720}
                   height={860}
                   priority
@@ -136,16 +145,15 @@ function Hero() {
                     Focus
                   </p>
                   <p className="mt-2 text-sm leading-6 text-slate-700">
-                    Building thoughtful products with clean UI, strong structure,
-                    and room to grow.
+                    {profile.heroFocus}
                   </p>
                 </div>
                 <div className="rounded-2xl bg-white/90 p-4">
                   <p className="font-mono text-xs uppercase tracking-[0.3em] text-slate-500">
-                    Updating Next
+                    Currently Learning
                   </p>
                   <p className="mt-2 text-sm leading-6 text-slate-700">
-                    Swap in your real image, resume, and links when you&apos;re ready.
+                    {profile.heroLearning}
                   </p>
                 </div>
               </div>
@@ -443,7 +451,7 @@ function AboutIcon({ type }) {
 
 function TechStackSection() {
   return (
-    <section className="section-anchor px-4 py-20 sm:px-6 lg:px-8">
+    <section className="section-anchor px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
       <RevealSection className="mx-auto max-w-7xl space-y-12" delay={100}>
         <div className="space-y-4 text-center">
           <h2 className="text-3xl font-semibold tracking-tight text-slate-950 sm:text-4xl">
@@ -478,7 +486,7 @@ function TechStackSection() {
 
 function SkillsStackSection() {
   return (
-    <section className="section-anchor px-4 py-20 sm:px-6 lg:px-8">
+    <section id="skills" className="section-anchor px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
       <RevealSection className="mx-auto max-w-7xl space-y-12" delay={120}>
         <div className="space-y-4 text-center">
           <h2 className="text-3xl font-semibold tracking-tight text-slate-950 sm:text-4xl">
@@ -493,14 +501,22 @@ function SkillsStackSection() {
           {skillsStackGroups.map((group) => (
             <article
               key={group.title}
-              className="stack-card rounded-[1.8rem] border p-7 sm:p-8"
+              className={`stack-card rounded-[1.8rem] border p-7 sm:p-8 ${
+                group.title === "Tools & Others" ? "lg:col-span-2" : ""
+              }`}
             >
               <div className="space-y-8">
                 <p className="stack-card-heading text-center font-mono text-xs uppercase tracking-[0.28em]">
                   {group.title}
                 </p>
 
-                <div className="grid grid-cols-2 gap-8">
+                <div
+                  className={`grid grid-cols-2 gap-8 ${
+                    group.title === "Tools & Others"
+                      ? "sm:grid-cols-3 lg:grid-cols-4"
+                      : ""
+                  }`}
+                >
                   {group.items.map((item) => (
                     <div key={item.name} className="space-y-3 text-center">
                       <span className="stack-card-icon mx-auto">
@@ -537,12 +553,12 @@ function AboutSection() {
       { name: "Express", icon: "express" },
       { name: "GitHub", icon: "github" },
       { name: "MySQL", icon: "mysql" },
-      { name: "Codex", icon: "codex" },
+      { name: "Firebase", icon: "spark" },
     ],
   ];
 
   return (
-    <section id="about" className="section-anchor px-4 py-20 sm:px-6 lg:px-8">
+    <section id="about" className="section-anchor px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
       <RevealSection
         className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[0.9fr_1.1fr]"
         delay={80}
@@ -550,8 +566,8 @@ function AboutSection() {
         <div className="space-y-8">
           <SectionHeading
             eyebrow="About Me"
-            title="A personal intro with space for both craft and character."
-            description="This section is intentionally written with a warmer voice so your portfolio feels like a person, not just a list of technologies."
+            title="Frontend React Developer focused on modern, responsive web experiences."
+            description="A quick introduction to my development journey, technical focus, and the kind of user experiences I enjoy building."
           />
           <div className="atom-showcase">
             <div className="atom-showcase-grid" aria-hidden="true" />
@@ -601,12 +617,12 @@ function AboutSection() {
 
 function EducationSection() {
   return (
-    <section id="education" className="section-anchor px-4 py-20 sm:px-6 lg:px-8">
+    <section id="education" className="section-anchor px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
       <RevealSection className="mx-auto max-w-7xl space-y-12" delay={120}>
         <SectionHeading
           eyebrow="Education"
-          title="Your academic foundation, presented with useful detail."
-          description="The placeholders below assume education beyond HSC and can be edited directly from the central data file."
+          title="My academic background in computer science and engineering."
+          description="Diploma and undergraduate studies that shaped my technical foundation and long-term growth in software development."
         />
 
         <div className="grid gap-6">
@@ -650,12 +666,12 @@ function ExperienceSection() {
   }
 
   return (
-    <section id="experience" className="section-anchor px-4 py-20 sm:px-6 lg:px-8">
+    <section id="experience" className="section-anchor px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
       <RevealSection className="mx-auto max-w-7xl space-y-12" delay={140}>
         <SectionHeading
           eyebrow="Experience"
-          title="Relevant work, internships, or leadership experience."
-          description="This block is data-driven, so you can keep placeholder entries for now or remove the array later to hide the section entirely."
+          title="Professional experience that strengthened my technical and communication skills."
+          description="Hands-on roles where I worked with software implementation, client support, troubleshooting, and service communication."
         />
 
         <div className="grid gap-6">
@@ -670,7 +686,12 @@ function ExperienceSection() {
                     {item.timeframe}
                   </p>
                   <h3 className="text-2xl font-semibold text-slate-950">{item.title}</h3>
-                  <p className="text-slate-600">{item.organization}</p>
+                  <p className="text-slate-600">
+                    {item.organization} | {item.type}
+                  </p>
+                  <p className="max-w-2xl text-sm leading-7 text-slate-600">
+                    {item.summary}
+                  </p>
                 </div>
                 <ul className="grid max-w-2xl gap-3 text-sm leading-7 text-slate-600">
                   {item.highlights.map((highlight) => (
@@ -691,14 +712,46 @@ function ExperienceSection() {
   );
 }
 
+function ServicesSection() {
+  return (
+    <section id="services" className="section-anchor px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
+      <RevealSection className="mx-auto max-w-7xl space-y-12" delay={150}>
+        <SectionHeading
+          eyebrow="Services"
+          title="Frontend development services I can contribute with."
+          description="Core areas where I build clean interfaces, responsive layouts, and practical web experiences with modern frontend tools."
+        />
+
+        <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
+          {services.map((service) => (
+            <article
+              key={service}
+              className="group rounded-[1.75rem] border border-slate-200 bg-white/85 p-6 shadow-sm shadow-slate-200/70 transition-transform duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-slate-200/80"
+            >
+              <div className="space-y-4">
+                <span className="inline-flex h-11 w-11 items-center justify-center rounded-2xl bg-orange-50 text-[var(--color-accent)]">
+                  <AboutIcon type="spark" />
+                </span>
+                <p className="text-base font-semibold leading-7 text-slate-900">
+                  {service}
+                </p>
+              </div>
+            </article>
+          ))}
+        </div>
+      </RevealSection>
+    </section>
+  );
+}
+
 function ProjectsSection() {
   return (
-    <section id="projects" className="section-anchor px-4 py-20 sm:px-6 lg:px-8">
+    <section id="projects" className="section-anchor px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
       <RevealSection className="mx-auto max-w-7xl space-y-12" delay={160}>
         <SectionHeading
           eyebrow="Projects"
-          title="Three portfolio-ready case studies with their own detail pages."
-          description="Each card and project page is generated from the same data model so your future updates stay consistent."
+          title="Selected projects built with React and modern web technologies."
+          description="A collection of responsive applications focused on usability, clean structure, reusable components, and practical problem solving."
         />
 
         <ProjectGrid projects={projects} />
@@ -708,14 +761,10 @@ function ProjectsSection() {
 }
 
 function ContactSection() {
-  const findMeLinks = [
-    socialLinks.find((link) => link.label === "GitHub"),
-    socialLinks.find((link) => link.label === "LinkedIn"),
-    { label: "Fiverr", href: "https://www.fiverr.com/sellers/pro_sammo/edit" },
-  ].filter(Boolean);
+  const findMeLinks = socialLinks.filter(Boolean);
 
   return (
-    <section id="contact" className="section-anchor px-4 py-20 sm:px-6 lg:px-8">
+    <section id="contact" className="section-anchor px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
       <RevealSection className="mx-auto max-w-7xl" delay={180}>
         <div className="contact-shell relative overflow-hidden rounded-[2.75rem] border border-slate-200 shadow-[0_30px_100px_rgba(15,23,42,0.14)]">
           <div className="contact-orb contact-orb-one pointer-events-none absolute -left-10 top-10 h-48 w-48 rounded-full" />
@@ -734,17 +783,43 @@ function ContactSection() {
                     {profile.name}
                   </h3>
                   <p className="text-lg text-[var(--color-accent)] sm:text-xl">
-                    Frontend Developer
+                    {profile.designation}
                   </p>
                 </div>
 
                 <p className="max-w-xl text-base leading-8 text-slate-600 sm:text-lg">
-                  I&apos;m a skilled Frontend developer specializing in building
-                  dynamic and responsive web applications using React,
-                  Next.js &amp; Tailwind CSS.
+                  I build modern, responsive, and user-friendly web applications
+                  using React.js, Next.js, JavaScript, and Tailwind CSS with a
+                  strong focus on clean UI and smooth user experience.
                 </p>
 
                 <div className="space-y-4 text-base text-slate-700 sm:text-lg">
+                  <p className="flex items-center gap-3">
+                    <span
+                      className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-white/80 text-[var(--color-accent)] shadow-sm shadow-slate-200/60"
+                      aria-hidden="true"
+                    >
+                      <svg viewBox="0 0 24 24" fill="none" className="h-4 w-4">
+                        <path
+                          d="M12 20C16.14 20 19.5 16.64 19.5 12.5C19.5 8.36 16.14 5 12 5C7.86 5 4.5 8.36 4.5 12.5C4.5 16.64 7.86 20 12 20Z"
+                          stroke="currentColor"
+                          strokeWidth="1.7"
+                        />
+                        <path
+                          d="M12 12.5C13.66 12.5 15 11.16 15 9.5C15 7.84 13.66 6.5 12 6.5C10.34 6.5 9 7.84 9 9.5C9 11.16 10.34 12.5 12 12.5Z"
+                          stroke="currentColor"
+                          strokeWidth="1.7"
+                        />
+                        <path
+                          d="M7.6 18.45C8.27 16.27 10 14.75 12 14.75C14 14.75 15.73 16.27 16.4 18.45"
+                          stroke="currentColor"
+                          strokeWidth="1.7"
+                          strokeLinecap="round"
+                        />
+                      </svg>
+                    </span>
+                    <span>{contact.location}</span>
+                  </p>
                   <p className="flex items-center gap-3">
                     <span
                       className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-white/80 text-[var(--color-accent)] shadow-sm shadow-slate-200/60"
@@ -875,10 +950,25 @@ function ContactSection() {
                             />
                           </svg>
                         ) : null}
-                        {link.label === "Fiverr" ? (
-                          <span className="text-lg font-bold lowercase leading-none">
-                            fi
-                          </span>
+                        {link.label === "Email" ? (
+                          <svg viewBox="0 0 24 24" fill="none" className="h-6 w-6">
+                            <path
+                              d="M4 7.5L12 13.25L20 7.5"
+                              stroke="currentColor"
+                              strokeWidth="1.8"
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                            />
+                            <rect
+                              x="3.5"
+                              y="5.5"
+                              width="17"
+                              height="13"
+                              rx="3"
+                              stroke="currentColor"
+                              strokeWidth="1.8"
+                            />
+                          </svg>
                         ) : null}
                       </a>
                     ))}
@@ -887,7 +977,7 @@ function ContactSection() {
               </div>
             </div>
 
-            <div className="contact-form-shell rounded-[2.2rem] border p-4 sm:p-6">
+            <div className="contact-form-shell flex h-full flex-col rounded-[2.2rem] border p-4 sm:p-6">
               <div className="mb-5">
                 <p className="contact-label font-mono text-xs uppercase tracking-[0.3em]">
                   Send A Message
@@ -917,6 +1007,7 @@ export default function Home() {
       <SkillsStackSection />
       <EducationSection />
       <ExperienceSection />
+      <ServicesSection />
       <ProjectsSection />
       <ContactSection />
       <SiteFooter />

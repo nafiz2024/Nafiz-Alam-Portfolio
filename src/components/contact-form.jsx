@@ -36,7 +36,7 @@ export default function ContactForm() {
   }, [state.status]);
 
   return (
-    <form ref={formRef} action={formAction} className="grid gap-5">
+    <form ref={formRef} action={formAction} className="flex h-full flex-col gap-5">
       <div className="grid gap-4 sm:grid-cols-2">
         <label className="grid gap-2">
           <span className="contact-input-label text-sm font-medium">Your Name</span>
@@ -74,13 +74,13 @@ export default function ContactForm() {
         />
       </label>
 
-      <label className="grid gap-2">
+      <label className="grid flex-1 gap-2">
         <span className="contact-input-label text-sm font-medium">Message</span>
         <textarea
           name="message"
-          rows="6"
+          rows="10"
           required
-          className="contact-input rounded-[1.5rem] border px-4 py-3 text-sm outline-none transition"
+          className="contact-input min-h-[13rem] flex-1 rounded-[1.5rem] border px-4 py-3 text-sm outline-none transition sm:min-h-[16rem] lg:min-h-[18rem]"
           placeholder="Write your message here..."
         />
       </label>

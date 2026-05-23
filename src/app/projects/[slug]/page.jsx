@@ -27,8 +27,15 @@ export async function generateMetadata({ params }) {
 
 function DetailSection({ title, children }) {
   return (
-    <section className="rounded-[2rem] border border-slate-200 bg-white/90 p-6 shadow-sm shadow-slate-200/70">
-      <h2 className="text-2xl font-semibold tracking-tight text-slate-950">
+    <section
+      className="rounded-[2rem] border p-6"
+      style={{
+        borderColor: "color-mix(in srgb, var(--foreground) 10%, transparent)",
+        background: "var(--surface-glass)",
+        boxShadow: "0 24px 60px rgba(148, 163, 184, 0.12)",
+      }}
+    >
+      <h2 className="text-2xl font-semibold tracking-tight text-foreground">
         {title}
       </h2>
       <div className="mt-4">{children}</div>
@@ -45,13 +52,26 @@ export default async function ProjectDetailsPage({ params }) {
   }
 
   return (
-    <main className="min-h-screen bg-[radial-gradient(circle_at_top_left,_rgba(251,146,60,0.18),_transparent_22%),linear-gradient(180deg,#fffdf8_0%,#f8fafc_100%)] px-4 py-5 sm:px-6 sm:py-6 lg:px-8">
+    <main
+      className="min-h-screen px-4 py-5 sm:px-6 sm:py-6 lg:px-8"
+      style={{
+        background:
+          "radial-gradient(circle at top left, var(--color-accent-soft), transparent 22%), linear-gradient(180deg, color-mix(in srgb, var(--background) 92%, white) 0%, var(--background-end) 100%)",
+      }}
+    >
       <div className="mx-auto max-w-6xl">
-        <div className="rounded-[1.75rem] border border-white/80 bg-white/80 px-4 py-4 shadow-lg shadow-slate-200/70 backdrop-blur sm:rounded-full sm:px-5 sm:py-3">
+        <div
+          className="rounded-[1.75rem] border px-4 py-4 backdrop-blur sm:rounded-full sm:px-5 sm:py-3"
+          style={{
+            borderColor: "color-mix(in srgb, var(--foreground) 10%, transparent)",
+            background: "var(--surface-glass)",
+            boxShadow: "0 18px 48px rgba(15, 23, 42, 0.12)",
+          }}
+        >
           <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
             <Link
               href="/#projects"
-              className="font-mono text-sm uppercase tracking-[0.32em] text-slate-950"
+              className="font-mono text-sm uppercase tracking-[0.32em] text-foreground"
             >
               {"<- Back to Projects"}
             </Link>
@@ -60,7 +80,8 @@ export default async function ProjectDetailsPage({ params }) {
                 href={project.liveUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center rounded-full bg-slate-950 px-4 py-2 text-sm font-semibold text-white"
+                className="inline-flex items-center justify-center rounded-full px-4 py-2 text-sm font-semibold text-white"
+                style={{ background: "color-mix(in srgb, var(--foreground) 88%, black)" }}
               >
                 Live Project
               </a>
@@ -68,9 +89,13 @@ export default async function ProjectDetailsPage({ params }) {
                 href={project.repoUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center rounded-full border border-slate-300 px-4 py-2 text-sm font-semibold text-slate-900"
+                className="inline-flex items-center justify-center rounded-full border px-4 py-2 text-sm font-semibold text-foreground"
+                style={{
+                  borderColor: "color-mix(in srgb, var(--foreground) 14%, transparent)",
+                  background: "color-mix(in srgb, var(--surface-glass) 92%, transparent)",
+                }}
               >
-                GitHub Client
+                GitHub
               </a>
             </div>
           </div>
@@ -82,7 +107,7 @@ export default async function ProjectDetailsPage({ params }) {
               <p className="font-mono text-sm uppercase tracking-[0.3em] text-[var(--color-accent)]">
                 {project.category}
               </p>
-              <h1 className="text-3xl font-semibold tracking-tight text-slate-950 sm:text-4xl lg:text-5xl">
+              <h1 className="text-3xl font-semibold tracking-tight text-foreground sm:text-4xl lg:text-5xl">
                 {project.name}
               </h1>
               <p className="max-w-3xl text-base leading-8 text-slate-600 sm:text-lg">
@@ -90,7 +115,14 @@ export default async function ProjectDetailsPage({ params }) {
               </p>
             </div>
 
-            <div className="overflow-hidden rounded-[2rem] border border-white/80 bg-white/80 p-3 shadow-[0_25px_80px_rgba(148,163,184,0.2)]">
+            <div
+              className="overflow-hidden rounded-[2rem] border p-3"
+              style={{
+                borderColor: "color-mix(in srgb, var(--foreground) 10%, transparent)",
+                background: "var(--surface-glass)",
+                boxShadow: "0 24px 60px rgba(148, 163, 184, 0.12)",
+              }}
+            >
               <Image
                 src={project.image}
                 alt={project.name}
@@ -108,7 +140,11 @@ export default async function ProjectDetailsPage({ params }) {
                 {project.stack.map((item) => (
                   <span
                     key={item}
-                    className="rounded-full bg-orange-50 px-3 py-1.5 text-sm font-medium text-orange-700"
+                    className="rounded-full px-3 py-1.5 text-sm font-medium"
+                    style={{
+                      background: "color-mix(in srgb, var(--color-accent) 14%, var(--surface-glass))",
+                      color: "var(--color-accent)",
+                    }}
                   >
                     {item}
                   </span>
@@ -122,11 +158,17 @@ export default async function ProjectDetailsPage({ params }) {
               </p>
             </DetailSection>
 
-            <DetailSection title="Challenges Faced">
+            <DetailSection title="Key Features">
               <ul className="grid gap-3 text-sm leading-7 text-slate-600">
-                {project.challenges.map((challenge) => (
-                  <li key={challenge} className="rounded-2xl bg-slate-50 px-4 py-3">
-                    {challenge}
+                {project.features.map((feature) => (
+                  <li
+                    key={feature}
+                    className="rounded-2xl px-4 py-3"
+                    style={{
+                      background: "color-mix(in srgb, var(--foreground) 4%, var(--surface-glass))",
+                    }}
+                  >
+                    {feature}
                   </li>
                 ))}
               </ul>
@@ -135,7 +177,13 @@ export default async function ProjectDetailsPage({ params }) {
             <DetailSection title="Potential Improvements and Future Plans">
               <ul className="grid gap-3 text-sm leading-7 text-slate-600">
                 {project.futurePlans.map((plan) => (
-                  <li key={plan} className="rounded-2xl bg-slate-50 px-4 py-3">
+                  <li
+                    key={plan}
+                    className="rounded-2xl px-4 py-3"
+                    style={{
+                      background: "color-mix(in srgb, var(--foreground) 4%, var(--surface-glass))",
+                    }}
+                  >
                     {plan}
                   </li>
                 ))}

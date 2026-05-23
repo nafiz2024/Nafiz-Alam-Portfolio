@@ -34,9 +34,9 @@ const geistMono = localFont({
 });
 
 export const metadata = {
-  title: "Nafiz Alam | Portfolio",
+  title: "Nafiz Alam | Frontend React Developer",
   description:
-    "A creative, responsive portfolio scaffold built with Next.js for showcasing profile details, skills, education, experience, and project case studies.",
+    "Personal portfolio of Nafiz Alam, a Frontend React Developer building modern, responsive, and user-friendly web applications with React.js and modern web technologies.",
 };
 
 export default function RootLayout({ children }) {

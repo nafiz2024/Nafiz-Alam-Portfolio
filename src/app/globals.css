@@ -898,6 +898,51 @@ button {
   border-top: 1px solid rgba(226, 232, 240, 0.8);
 }
 
+.project-details-page {
+  background:
+    radial-gradient(circle at top left, var(--color-accent-soft), transparent 22%),
+    linear-gradient(180deg, color-mix(in srgb, var(--background) 92%, white) 0%, var(--background-end) 100%);
+}
+
+.project-details-topbar,
+.project-detail-card,
+.project-details-image-shell {
+  border-color: rgba(226, 232, 240, 0.92);
+  background: rgba(255, 255, 255, 0.82);
+  box-shadow: 0 24px 60px rgba(148, 163, 184, 0.16);
+}
+
+.project-details-back,
+.project-detail-title,
+.project-details-heading {
+  color: #0f172a;
+}
+
+.project-details-copy,
+.project-details-list {
+  color: #475569;
+}
+
+.project-details-primary {
+  background: #0f172a;
+  color: #fff;
+}
+
+.project-details-secondary {
+  border-color: rgba(203, 213, 225, 0.9);
+  color: #0f172a;
+  background: rgba(255, 255, 255, 0.72);
+}
+
+.project-details-chip {
+  background: #fff7ed;
+  color: #c2410c;
+}
+
+.project-details-list-item {
+  background: #f8fafc;
+}
+
 .footer-shell {
   background:
     linear-gradient(180deg, rgba(255, 255, 255, 0.82), rgba(248, 250, 252, 0.7));
@@ -1457,6 +1502,51 @@ button {
   border-top-color: rgba(255, 255, 255, 0.08);
 }
 
+:root[data-theme="dark"] .project-details-page {
+  background:
+    radial-gradient(circle at top left, rgba(139, 92, 246, 0.16), transparent 24%),
+    linear-gradient(180deg, #090511 0%, #140a22 100%);
+}
+
+:root[data-theme="dark"] .project-details-topbar,
+:root[data-theme="dark"] .project-detail-card,
+:root[data-theme="dark"] .project-details-image-shell {
+  border-color: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow: none;
+}
+
+:root[data-theme="dark"] .project-details-back,
+:root[data-theme="dark"] .project-detail-title,
+:root[data-theme="dark"] .project-details-heading {
+  color: #f8f5ff;
+}
+
+:root[data-theme="dark"] .project-details-copy,
+:root[data-theme="dark"] .project-details-list {
+  color: #d8cdee;
+}
+
+:root[data-theme="dark"] .project-details-primary {
+  background: #12081f;
+  color: #fff;
+}
+
+:root[data-theme="dark"] .project-details-secondary {
+  border-color: rgba(255, 255, 255, 0.14);
+  color: #f8f5ff;
+  background: rgba(255, 255, 255, 0.04);
+}
+
+:root[data-theme="dark"] .project-details-chip {
+  background: rgba(255, 255, 255, 0.08);
+  color: #f6c6a8;
+}
+
+:root[data-theme="dark"] .project-details-list-item {
+  background: rgba(255, 255, 255, 0.04);
+}
+
 :root[data-theme="dark"] .footer-shell {
   background: linear-gradient(180deg, rgba(16, 12, 28, 0.94), rgba(20, 10, 34, 0.92));
   border-color: rgba(255, 255, 255, 0.08);
@@ -1624,6 +1714,27 @@ button {
 }
 
 @media (max-width: 767px) {
+  html {
+    scroll-padding-top: 6rem;
+  }
+
+  .section-anchor {
+    scroll-margin-top: 6rem;
+  }
+
+  .navbar-shell .mx-auto {
+    padding-top: 0.85rem;
+    padding-bottom: 0.85rem;
+  }
+
+  .hero-title {
+    letter-spacing: -0.03em;
+  }
+
+  .hero-actions a {
+    width: 100%;
+  }
+
   .theme-toggle-shell {
     right: 0;
     top: auto;
@@ -1668,6 +1779,44 @@ button {
 }
 
 @media (max-width: 479px) {
+  .hero-chip {
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .hero-designation-text {
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+  }
+
+  .hero-copy {
+    line-height: 1.75;
+  }
+
+  .stack-card-icon {
+    height: 3.2rem;
+    width: 3.2rem;
+  }
+
+  .stack-card-icon svg {
+    height: 1.65rem;
+    width: 1.65rem;
+  }
+
+  .contact-form-shell {
+    padding: 0.95rem;
+  }
+
+  .project-card {
+    border-radius: 1.35rem;
+  }
+
+  .project-image-shell {
+    border-top-left-radius: 1.35rem;
+    border-top-right-radius: 1.35rem;
+  }
+
   .hero-social a {
     flex-basis: 100%;
   }
@@ -1680,6 +1829,18 @@ button {
   .footer-social svg {
     height: 1.35rem;
     width: 1.35rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .hero-title {
+    font-size: 2.02rem !important;
+  }
+
+  .hero-actions a,
+  .hero-social a,
+  .project-card a {
+    font-size: 0.82rem;
   }
 }
 
