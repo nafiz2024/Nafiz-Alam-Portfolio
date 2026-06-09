@@ -18,6 +18,11 @@ export default function RevealSection({
       return undefined;
     }
 
+    if (typeof IntersectionObserver === "undefined") {
+      setVisible(true);
+      return undefined;
+    }
+
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
@@ -26,7 +31,7 @@ export default function RevealSection({
         }
       },
       {
-        threshold: 0.18,
+        threshold: 0,
         rootMargin: "0px 0px -8% 0px",
       }
     );
