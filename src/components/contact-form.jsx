@@ -46,7 +46,7 @@ export default function ContactForm() {
             required
             autoComplete="name"
             className="contact-input rounded-2xl border px-4 py-3 text-sm outline-none transition"
-            placeholder="Nafiz Alam"
+            placeholder="Write Your Name"
           />
         </label>
         <label className="grid gap-2">
@@ -57,7 +57,7 @@ export default function ContactForm() {
             required
             autoComplete="email"
             className="contact-input rounded-2xl border px-4 py-3 text-sm outline-none transition"
-            placeholder="you@example.com"
+            placeholder="Enter Your Email"
           />
         </label>
       </div>
